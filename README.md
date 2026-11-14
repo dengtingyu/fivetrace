@@ -15,6 +15,22 @@
 
 On **499 topic-matched LLaDA-generated and human academic abstract pairs**, the frozen V2 detector reaches **0.9920 Macro-F1**, **99.20% AI recall**, and **0.80% human false positives** at the fixed 0.5 cutoff. The diffusion generator is absent from the audited fitting manifest. This is one external condition, not a universal accuracy or state-of-the-art claim.
 
+## Chinese regression: ahead of official XLM-R in all 7 binary-label conditions
+
+**Five Chinese sources, seven binary-label conditions**, compared with the **official DetectRL-X XLM-R (2026)**. V2 has higher Macro-F1 under both XLM-R's first-512-token and shared full-text policies. The first three rows are V2 training-source holdouts: these are source-familiar/transfer regression checks, **not a DetectRL-X official-test ranking**. Mixed/attacked conditions are labelled separately; human controls are reused.
+
+| Source / condition | Human / AI | **FiveTrace V2** | XLM-R · first512 | XLM-R · shared fulltext |
+|---|---:|---:|---:|---:|
+| C-ReD · source-familiar holdout | 804/1099 | **0.9957** | 0.9052 | 0.9052 |
+| HC3 · source-familiar holdout | 382/382 | **0.9987** | 0.7496 | 0.7496 |
+| CUDRT · source-familiar holdout | 104/106 | **0.8158** | 0.7164 | 0.7164 |
+| M4 · Chinese QA | 100/200 | **0.9596** | 0.6226 | 0.6052 |
+| STORAL · unaltered | 100/100 | **1.0000** | 0.8519 | 0.8519 |
+| STORAL · mixed | 100/100 | **0.9700** | 0.7545 | 0.7789 |
+| STORAL · robustness | 353/500 | **0.9844** | 0.7956 | 0.7866 |
+
+[False positives, recall and full source details](docs/RESULTS.md).
+
 ## The core idea: corpus-based proxy likelihood and ranks
 
 For evidence groups **2 and 3**, collect labelled generator outputs and human writing, then train small class-conditional adapters on a local Qwen reference model. At detection time:
