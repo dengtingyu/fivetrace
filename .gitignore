@@ -26,3 +26,10 @@ __pycache__/
 .env*
 
 aggregate_metrics.json
+
+# Baseline environments, inputs and ad-hoc JSON reports stay local.
+local_models/
+*.json
+!PUBLICATION_MANIFEST.json
+!results/*.json
+!requirements-eval.txt

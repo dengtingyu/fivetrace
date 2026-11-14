@@ -2,9 +2,9 @@
 
 # FiveTrace V2
 
-### Train on generator corpora. Detect with one local Qwen backbone.
+### Five evidence groups. One local Qwen. Zero target-model API calls.
 
-[Method](docs/METHOD.md) · [Full results](docs/RESULTS.md) · [Protocol](docs/PROTOCOL.md)
+[Method](docs/METHOD.md) · [Recent comparisons](docs/RECENT_COMPARISON.md) · [Full results](docs/RESULTS.md) · [Protocol](docs/PROTOCOL.md)
 
 ![License MIT](https://img.shields.io/badge/License-MIT-blue)
 ![Reference Qwen3 1.7B](https://img.shields.io/badge/Reference-Qwen3%201.7B-blue)
@@ -14,6 +14,10 @@
 **A detector that learns from a generator's text rather than requiring its weights or inference API.** FiveTrace V2 uses one frozen Qwen3-1.7B-Base with AI/human LoRA adapters, a representation classifier, and sentence/lexical statistics.
 
 On **499 topic-matched LLaDA-generated and human academic abstract pairs**, the frozen V2 detector reaches **0.9920 Macro-F1**, **99.20% AI recall**, and **0.80% human false positives** at the fixed 0.5 cutoff. The diffusion generator is absent from the audited fitting manifest. This is one external condition, not a universal accuracy or state-of-the-art claim.
+
+| Five fused evidence groups | One local 1.7B backbone | Zero target-generator API calls |
+|---|---|---|
+| Representation + loss + rank + sentence + lexical signals | Base + AI/human LoRAs | Corpus-based coverage without deploying the original generator |
 
 ## Chinese regression: ahead of official XLM-R in all 7 binary-label conditions
 
@@ -30,6 +34,42 @@ On **499 topic-matched LLaDA-generated and human academic abstract pairs**, the 
 | STORAL · robustness | 353/500 | **0.9844** | 0.7956 | 0.7866 |
 
 [False positives, recall and full source details](docs/RESULTS.md).
+
+## Measured against recent open detectors
+
+We added author-published **Desklib (2025), Tropa-mini (2026), and DeBERTa-ConPara (AACL-IJCNLP 2026)**, each scored on all **6,861 eligible public English inputs**. Alongside the official DetectRL-X XLM-R and MAGE, we compare **6 detectors** on the common supported inputs within each group; the MAGE author recipe exceeds its context limit on 6 older-source inputs. V2 was not retrained, and no thresholds were fitted to these test labels.
+
+![Six-condition external Macro-F1 comparison with recent open detectors](assets/benchmark_comparison.svg)
+
+First, **Macro-F1 ↑ across three different sources**: **643/48, 500/382, and 150/600 human/AI inputs** respectively. Every detector uses the same inputs within a column; sources have different distributions.
+
+| Detector / release | TextSight | AI-Detector-Benchmark | ToolBenchmarks · raw |
+|---|---:|---:|---:|
+| **FiveTrace V2** | 0.8594 | **0.9675** | 0.3318 |
+| Desklib v1.01 · 2025 | 0.7906 | 0.8424 | 0.6142 |
+| Tropa-mini · 2026 | **0.9140** | **0.9675** | **0.6168** |
+| DeBERTa-ConPara · AACL 2026 | 0.7283 | 0.7041 | 0.5829 |
+| DetectRL-X XLM-R · 2026 | 0.8646 | 0.9095 | 0.4011 |
+| MAGE · ACL 2024 · author | 0.6068 | 0.6036 | 0.5161 |
+| MAGE · raw sensitivity† | 0.5340 | 0.5570 | 0.5181 |
+
+The following are **three conditions of ONE academic-abstract benchmark**, not three independent benchmarks: **499/499, 497/497, and 499/499 human/AI inputs**. Bold marks the highest point estimates; shared controls are not independent authors to add together.
+
+| Detector / release | LLaDA abstracts | LLaDA rephrasing | LLaMA abstracts |
+|---|---:|---:|---:|
+| **FiveTrace V2** | **0.9920** | 0.7068 | **0.9960** |
+| Desklib v1.01 · 2025 | 0.9599 | 0.7989 | 0.9599 |
+| Tropa-mini · 2026 | 0.7291 | 0.3639 | 0.9366 |
+| DeBERTa-ConPara · AACL 2026 | 0.9870 | 0.6967 | 0.9890 |
+| DetectRL-X XLM-R · 2026 | 0.8778 | **0.8448** | 0.9417 |
+| MAGE · ACL 2024 · author | 0.9336 | 0.6567 | 0.9316 |
+| MAGE · raw sensitivity† | 0.9910 | 0.7952 | 0.9900 |
+
+† Raw first-4096-token MAGE with softmax 0.5 is a **sensitivity control**, a second mode of the same detector rather than another competitor.
+
+**Published/native operating points, not artificially matched false-positive rates:** V2 0.5; Desklib 0.5; Tropa 0.975591; ConPara uses its stored source-validation logit-margin threshold 2.942383; the MAGE author recipe has a separate raw-logit boundary. Context budgets also differ. The [full comparison](docs/RECENT_COMPARISON.md) reports observed FPR, recall, AUROC, confidence intervals, long-input policies and pinned revisions. Complete training exposure for new comparators is unknown; these texts are not proven unseen to every detector.
+
+**V2 was primarily trained in Chinese; English is transfer evaluation.** Difficult rephrasing, short-answer and new-source conditions remain visible. This is not a claim of universal superiority on a complete leaderboard.
 
 ## The core idea: corpus-based proxy likelihood and ranks
 
@@ -59,17 +99,7 @@ flowchart LR
 
 The design centers on compact corpus-trained references, class-conditional differences and five-group fusion. Generator coverage comes from the training corpora; the deployed scoring backbone stays local.
 
-## External results
-
-The table reports **Macro-F1** on each matched condition. V2 uses the same full-text policy throughout. Context-limited XLM-R and the published MAGE deployment recipe are labelled explicitly; the common full-text control and raw MAGE context-limit scores are also in the [complete results](docs/RESULTS.md).
-
-| Matched condition | Topic families | **FiveTrace V2** | XLM-R · original first 512 tokens | MAGE · author recipe |
-|---|---:|---:|---:|---:|
-| LLaDA abstract generation | 499 | **0.9920** | 0.8778 | 0.9336 |
-| LLaDA rephrasing | 497 | 0.7068 | **0.8448** | 0.6567 |
-| LLaMA abstract generation | 499 | **0.9960** | 0.9417 | 0.9316 |
-
-**Performance changes substantially with the task.** The stronger abstract-generation result does not remove the rephrasing gap. On the additional AI-only diffusion set, V2 recall ranges from **47% to 98%** across the seven published model/length strata; that collection has no human controls, so no F1/FPR is invented.
+## More source-transfer results
 
 Selected other sources, V2 at 0.5:
 
