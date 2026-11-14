@@ -35,6 +35,25 @@ On **499 topic-matched LLaDA-generated and human academic abstract pairs**, the 
 
 [False positives, recall and full source details](docs/RESULTS.md).
 
+## Two additional standard benchmarks
+
+Beyond the earlier sources, we added the **COLING 2025 GenAI Task 1 official English test** and the **Intel AI Peer Review Detection Benchmark ICLR2024 test**. Sources, sampling, checkpoints and thresholds were fixed before prediction: **300 human + 300 official machine-class labels**, and **50 human reviews matched to 50 papers with 50 reviews from each of 5 generators**. These are fixed subsets, **not full official leaderboard scores**.
+
+| Detector | COLING 2025 · official-test slice | Intel · peer-review test slice |
+|---|---:|---:|
+| **FiveTrace V2** | 0.8250 | 0.8969 |
+| Desklib (2025) | 0.7274 | 0.7996 |
+| Tropa-mini (2026) | **0.8367** | **0.9324** |
+| ConPara (AACL 2026) | 0.8127 | 0.9187 |
+| DetectRL-X XLM-R (2026) | 0.7647 | 0.6877 |
+| MAGE author (ACL 2024) | 0.7409 | 0.7220 |
+
+**At the frozen native operating points, V2 has higher Macro-F1 than Desklib, official XLM-R and MAGE on both slices.** Tropa-mini has higher point estimates; paired intervals for V2 vs. Tropa/ConPara cross zero, so these samples do not establish a statistical separation.
+
+![Two additional standard benchmarks and derived local stress tests](assets/standard_benchmarks.svg)
+
+Columns use common supported inputs across all 6 detectors; Intel retains complete paper pairs. COLING includes official mixed/edited tasks with their original labels. The [full report](docs/STANDARD_BENCHMARKS.md) separates source/tasks and generators. The two right-hand columns reuse the same texts as clean/zero-width stress conditions, **not extra independent benchmarks**. Known fit/prior-test overlap checks, source familiarity and limits are disclosed. No new test data was used for fitting or threshold calibration.
+
 ## Measured against recent open detectors
 
 We added author-published **Desklib (2025), Tropa-mini (2026), and DeBERTa-ConPara (AACL-IJCNLP 2026)**, each scored on all **6,861 eligible public English inputs**. Alongside the official DetectRL-X XLM-R and MAGE, we compare **6 detectors** on the common supported inputs within each group; the MAGE author recipe exceeds its context limit on 6 older-source inputs. V2 was not retrained, and no thresholds were fitted to these test labels.

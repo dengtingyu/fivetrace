@@ -35,6 +35,25 @@
 
 [误报率、检出率与完整来源说明](docs/RESULTS.md)。
 
+## 再看两套标准 benchmark
+
+在已有来源之外，新增 **COLING 2025 GenAI Task 1 正式英文测试集**和 **Intel AI Peer Review Detection Benchmark 的 ICLR2024 test**。先固定来源、抽样规则、模型和阈值，再做预测：分别抽取 **300 人工＋300 官方机器类标签**、**50 篇论文对应的人工审稿＋5 个模型各 50 篇审稿**。这些是固定子集，**不代表完整官方排行榜分数**。
+
+| 检测器 | COLING 2025 · 正式测试子集 | Intel · 审稿测试子集 |
+|---|---:|---:|
+| **FiveTrace V2** | 0.8250 | 0.8969 |
+| Desklib (2025) | 0.7274 | 0.7996 |
+| Tropa-mini (2026) | **0.8367** | **0.9324** |
+| ConPara (AACL 2026) | 0.8127 | 0.9187 |
+| DetectRL-X XLM-R (2026) | 0.7647 | 0.6877 |
+| MAGE author (ACL 2024) | 0.7409 | 0.7220 |
+
+**在这两套子集、各自预设工作点的 Macro-F1 上，V2 均高于 Desklib、官方 XLM-R 和 MAGE。** Tropa-mini 的点估计更高；V2 与 Tropa／ConPara 的成对差值区间均跨零，当前样本尚不能确定统计上的优劣。
+
+![两套额外标准 benchmark 与派生压力测试](assets/standard_benchmarks.svg)
+
+各列取全部 6 个检测器共同支持的输入；Intel 按完整论文配对过滤。COLING 含混写、改写等官方任务，保留官方标签，并在[完整报告](docs/STANDARD_BENCHMARKS.md)按来源／任务、生成器列出结果。图中右侧两列是同一批文本的干净／零宽字符压力条件，**不额外计作独立 benchmark**。拟合／历史外测重合检查、来源熟悉度和局限均公开；没有使用新测试数据训练或调阈值。
+
 ## 与近期开放检测器实测对比
 
 新增 **Desklib（2025）、Tropa-mini（2026）、DeBERTa-ConPara（AACL-IJCNLP 2026）**，均采用作者公开权重，三款模型各测满 **6,861 条合格公开英文输入**。与 DetectRL-X 官方 XLM-R、MAGE 一起，共比较 **6 个检测器**，各组取共同支持的输入；MAGE 作者流程有 6 条旧来源输入超出上下文限制。这轮对比没有重新训练 V2，也没有利用测试标签调阈值。
