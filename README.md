@@ -1,8 +1,10 @@
+**English** | [简体中文](README.zh-CN.md)
+
 # FiveTrace V2
 
 ### Train on generator corpora. Detect with one local Qwen backbone.
 
-[中文说明](README.zh-CN.md) · [Method](docs/METHOD.md) · [Full results](docs/RESULTS.md) · [Protocol](docs/PROTOCOL.md)
+[Method](docs/METHOD.md) · [Full results](docs/RESULTS.md) · [Protocol](docs/PROTOCOL.md)
 
 ![License MIT](https://img.shields.io/badge/License-MIT-blue)
 ![Reference Qwen3 1.7B](https://img.shields.io/badge/Reference-Qwen3%201.7B-blue)
@@ -45,7 +47,7 @@ The design centers on compact corpus-trained references, class-conditional diffe
 
 The table reports **Macro-F1** on each matched condition. V2 uses the same full-text policy throughout. Context-limited XLM-R and the published MAGE deployment recipe are labelled explicitly; the common full-text control and raw MAGE context-limit scores are also in the [complete results](docs/RESULTS.md).
 
-| Matched condition | Topic families | **FiveTrace V2** | XLM-R · original first512 | MAGE · author recipe |
+| Matched condition | Topic families | **FiveTrace V2** | XLM-R · original first 512 tokens | MAGE · author recipe |
 |---|---:|---:|---:|---:|
 | LLaDA abstract generation | 499 | **0.9920** | 0.8778 | 0.9336 |
 | LLaDA rephrasing | 497 | 0.7068 | **0.8448** | 0.6567 |
