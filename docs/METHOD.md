@@ -19,7 +19,7 @@ The benefit is removal of target-generator deployment/API dependencies. Collecti
 
 ## Measured local training
 
-Each adapter has 1,605,632 trainable parameters. AI and human adapters each use 3,000 training units, 160 development units, rank8/alpha16, q_proj/v_proj, dropout0.05, BF16 causal-LM training, max256 tokens, batch2 with accumulation4, and one epoch. Select the checkpoint with minimum class-specific development NLL. The stored AI best step is375; human best step300, from375 total updates each. Adapter training took about16.2minutes total on an8GB RTX5060 Laptop; about4.18GiB peak allocated CUDA memory. These numbers exclude later feature extraction and evaluation. See results/training.json.
+Each adapter has 1,605,632 trainable parameters. AI and human adapters each use 3,000 training units, 160 development units, rank8/alpha16, q_proj/v_proj, dropout0.05, BF16 causal-LM training, max256 tokens, batch2 with accumulation4, and one epoch. Select the checkpoint with minimum class-specific development NLL. The stored AI best step is375; human best step300, from375 total updates each. The two LoRA phases (including their development evaluations) took 476.6 + 495.1 seconds, about16.2minutes, on an8GB RTX5060 Laptop; about4.18GiB peak allocated CUDA memory. This excludes preceding tokenization/model loading, feature extraction, classifier/fusion fitting, downloads and benchmarks. No reliable single end-to-end training time was retained; cached/resumed fitting timings cannot establish it. Group1 fits a logistic head on8,000 labelled frozen-Base representations; fusion uses3,000 separate units. See results/training.json.
 
 ## Scope of the contribution
 

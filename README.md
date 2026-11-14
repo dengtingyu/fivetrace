@@ -86,7 +86,9 @@ python -m unittest discover -s tests -v
 
 `evaluate.py` accepts local JSONL with `text` and integer `label` (0 human, 1 AI); it writes aggregates only and separately counts inputs below 100 nonspace characters. No text is uploaded. Use `--artifact-dir` to select a compatible local detector. `FIVETRACE_HOME` optionally selects the local runtime root for models, data and artifacts.
 
-The measured LoRA run used an **RTX 5060 Laptop GPU (8 GB)**. Each adapter has **1,605,632 trainable parameters**; one epoch used **3,000 training units per branch** and 160 development units. Both branches together took **16.2 minutes**, with about **4.18 GiB peak allocated CUDA memory during adapter training**. Feature extraction, fitting and evaluation add runtime; this is not an end-to-end training-time or inference-memory claim. [Measured resource aggregates](results/training.json).
+**The complete detector did not train in 16.2 minutes.** That number sums only the AI and human **LoRA training phases**, including their development evaluations: 476.6 + 495.1 seconds. It excludes preceding tokenization/model loading, feature extraction, classifier/fusion fitting, downloads and benchmark evaluation. **A reliable single end-to-end training time was not retained**; a resumed, cached fitting run cannot establish it.
+
+The measured LoRA phases used an **RTX 5060 Laptop GPU (8 GB)**, with **1,605,632 trainable parameters per adapter**, **3,000 training units plus 160 development units per branch**, and one epoch. Peak allocated CUDA memory during these phases was about **4.18 GiB**. Group 1 separately trains a logistic head on **8,000 labelled frozen-Base representations**, and the fusion layer uses another **3,000 units**; preparing a larger corpus does not mean every record was fitted. [Training scope and measured aggregates](results/training.json).
 
 The public trainer replays the historically selected full V2 LoRA architecture and its fitted-head/fusion recipe; it reports the current fixed 0.5 operating point. It does not reproduce an architecture search or silently train the five-epoch V3 recipe. See [training and test isolation](docs/PROTOCOL.md).
 

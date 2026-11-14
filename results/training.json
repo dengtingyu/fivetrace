@@ -194,6 +194,12 @@
   },
   "runtime_threshold": 0.5,
   "recipe": "Historically selected V2 full LoRA architecture; no V3 weights or results are attributed to V2.",
+  "timing": {
+    "adapter_training_seconds": 971.7649999999849,
+    "adapter_training_scope": "AI and human LoRA phases, including their development evaluations; excludes model loading and preceding tokenization, feature extraction, classifier/fusion fitting and external evaluation.",
+    "full_end_to_end_seconds": null,
+    "full_end_to_end_note": "No clean single end-to-end timing was retained. Cached/resumed fitting runs cannot establish total training time."
+  },
   "versions": {
     "python": "3.13.5",
     "torch": "2.9.1+cu128",
