@@ -23,15 +23,19 @@ On **499 topic-matched LLaDA-generated and human academic abstract pairs**, the 
 
 **Five Chinese sources, seven binary-label conditions**, compared with the **official DetectRL-X XLM-R (2026)**. V2 has higher Macro-F1 under both XLM-R's first-512-token and shared full-text policies. The first three rows are V2 training-source holdouts: these are source-familiar/transfer regression checks, **not a DetectRL-X official-test ranking**. Mixed/attacked conditions are labelled separately; human controls are reused.
 
+Each cell shows **Macro-F1 ↑** on the first line and **AI recall ↑ (human FPR ↓)** on the second. Bold scores mark column-highest Macro-F1 only.
+
+Macro-F1 averages the human-class and AI-class F1 scores. AI recall uses AI inputs as its denominator; human FPR is the fraction of human inputs incorrectly labelled AI.
+
 | Source / condition | Human / AI | **FiveTrace V2** | XLM-R · first512 | XLM-R · shared fulltext |
 |---|---:|---:|---:|---:|
-| C-ReD · source-familiar holdout | 804/1099 | **0.9957** | 0.9052 | 0.9052 |
-| HC3 · source-familiar holdout | 382/382 | **0.9987** | 0.7496 | 0.7496 |
-| CUDRT · source-familiar holdout | 104/106 | **0.8158** | 0.7164 | 0.7164 |
-| M4 · Chinese QA | 100/200 | **0.9596** | 0.6226 | 0.6052 |
-| STORAL · unaltered | 100/100 | **1.0000** | 0.8519 | 0.8519 |
-| STORAL · mixed | 100/100 | **0.9700** | 0.7545 | 0.7789 |
-| STORAL · robustness | 353/500 | **0.9844** | 0.7956 | 0.7866 |
+| C-ReD · source-familiar holdout | 804/1099 | **0.9957**<br>99.55% (0.37%) | 0.9052<br>98.64% (19.40%) | 0.9052<br>98.64% (19.40%) |
+| HC3 · source-familiar holdout | 382/382 | **0.9987**<br>100.00% (0.26%) | 0.7496<br>60.47% (9.42%) | 0.7496<br>60.47% (9.42%) |
+| CUDRT · source-familiar holdout | 104/106 | **0.8158**<br>67.92% (3.85%) | 0.7164<br>55.66% (10.58%) | 0.7164<br>55.66% (10.58%) |
+| M4 · Chinese QA | 100/200 | **0.9596**<br>95.00% (1.00%) | 0.6226<br>43.50% (0.00%) | 0.6052<br>41.00% (0.00%) |
+| STORAL · unaltered | 100/100 | **1.0000**<br>100.00% (0.00%) | 0.8519<br>100.00% (29.00%) | 0.8519<br>100.00% (29.00%) |
+| STORAL · mixed | 100/100 | **0.9700**<br>94.00% (0.00%) | 0.7545<br>80.00% (29.00%) | 0.7789<br>85.00% (29.00%) |
+| STORAL · robustness | 353/500 | **0.9844**<br>97.80% (0.57%) | 0.7956<br>83.40% (24.36%) | 0.7866<br>81.80% (24.36%) |
 
 [False positives, recall and full source details](docs/RESULTS.md).
 
@@ -39,14 +43,16 @@ On **499 topic-matched LLaDA-generated and human academic abstract pairs**, the 
 
 Beyond the earlier sources, we added the **COLING 2025 GenAI Task 1 official English test** and the **Intel AI Peer Review Detection Benchmark ICLR2024 test**. Sources, sampling, checkpoints and thresholds were fixed before prediction: **300 human + 300 official machine-class labels**, and **50 human reviews matched to 50 papers with 50 reviews from each of 5 generators**. These are fixed subsets, **not full official leaderboard scores**.
 
+Each cell shows **Macro-F1 ↑** on the first line and **AI recall ↑ (human FPR ↓)** on the second. Bold scores mark column-highest Macro-F1 only.
+
 | Detector | COLING 2025 · official-test slice | Intel · peer-review test slice |
 |---|---:|---:|
-| **FiveTrace V2** | 0.8250 | 0.8969 |
-| Desklib (2025) | 0.7274 | 0.7996 |
-| Tropa-mini (2026) | **0.8367** | **0.9324** |
-| ConPara (AACL 2026) | 0.8127 | 0.9187 |
-| DetectRL-X XLM-R (2026) | 0.7647 | 0.6877 |
-| MAGE author (ACL 2024) | 0.7409 | 0.7220 |
+| **FiveTrace V2** | 0.8250<br>83.33% (18.33%) | 0.8969<br>95.20% (12.00%) |
+| Desklib (2025) | 0.7274<br>85.67% (39.33%) | 0.7996<br>100.00% (52.00%) |
+| Tropa-mini (2026) | **0.8367**<br>82.67% (15.33%) | **0.9324**<br>98.40% (14.00%) |
+| ConPara (AACL 2026) | 0.8127<br>92.67% (29.67%) | 0.9187<br>98.40% (18.00%) |
+| DetectRL-X XLM-R (2026) | 0.7647<br>60.00% (5.67%) | 0.6877<br>73.60% (14.00%) |
+| MAGE author (ACL 2024) | 0.7409<br>79.67% (31.33%) | 0.7220<br>87.20% (38.00%) |
 
 **At the frozen native operating points, V2 has higher Macro-F1 than Desklib, official XLM-R and MAGE on both slices.** Tropa-mini has higher point estimates; paired intervals for V2 vs. Tropa/ConPara cross zero, so these samples do not establish a statistical separation.
 
@@ -60,29 +66,31 @@ We added author-published **Desklib (2025), Tropa-mini (2026), and DeBERTa-ConPa
 
 ![Six-condition external Macro-F1 comparison with recent open detectors](assets/benchmark_comparison.svg)
 
-First, **Macro-F1 ↑ across three different sources**: **643/48, 500/382, and 150/600 human/AI inputs** respectively. Every detector uses the same inputs within a column; sources have different distributions.
+First, three different sources: **643/48, 500/382, and 150/600 human/AI inputs** respectively. Every detector uses the same inputs within a column; sources have different distributions.
+
+Each cell shows **Macro-F1 ↑** on the first line and **AI recall ↑ (human FPR ↓)** on the second. Bold scores mark column-highest Macro-F1 only.
 
 | Detector / release | TextSight | AI-Detector-Benchmark | ToolBenchmarks · raw |
 |---|---:|---:|---:|
-| **FiveTrace V2** | 0.8594 | **0.9675** | 0.3318 |
-| Desklib v1.01 · 2025 | 0.7906 | 0.8424 | 0.6142 |
-| Tropa-mini · 2026 | **0.9140** | **0.9675** | **0.6168** |
-| DeBERTa-ConPara · AACL 2026 | 0.7283 | 0.7041 | 0.5829 |
-| DetectRL-X XLM-R · 2026 | 0.8646 | 0.9095 | 0.4011 |
-| MAGE · ACL 2024 · author | 0.6068 | 0.6036 | 0.5161 |
-| MAGE · raw sensitivity† | 0.5340 | 0.5570 | 0.5181 |
+| **FiveTrace V2** | 0.8594<br>83.33% (3.11%) | **0.9675**<br>93.98% (1.00%) | 0.3318<br>16.83% (0.00%) |
+| Desklib v1.01 · 2025 | 0.7906<br>97.92% (8.55%) | 0.8424<br>97.12% (25.60%) | 0.6142<br>56.67% (6.00%) |
+| Tropa-mini · 2026 | **0.9140**<br>100.00% (2.80%) | **0.9675**<br>93.98% (1.00%) | **0.6168**<br>54.83% (0.00%) |
+| DeBERTa-ConPara · AACL 2026 | 0.7283<br>68.75% (7.62%) | 0.7041<br>91.62% (45.40%) | 0.5829<br>55.67% (15.33%) |
+| DetectRL-X XLM-R · 2026 | 0.8646<br>91.67% (3.89%) | 0.9095<br>83.77% (3.00%) | 0.4011<br>26.33% (4.67%) |
+| MAGE · ACL 2024 · author | 0.6068<br>47.92% (12.75%) | 0.6036<br>83.51% (56.40%) | 0.5161<br>46.67% (18.00%) |
+| MAGE · raw sensitivity† | 0.5340<br>56.25% (25.19%) | 0.5570<br>89.53% (67.00%) | 0.5181<br>52.67% (32.00%) |
 
-The following are **three conditions of ONE academic-abstract benchmark**, not three independent benchmarks: **499/499, 497/497, and 499/499 human/AI inputs**. Bold marks the highest point estimates; shared controls are not independent authors to add together.
+Using the same cell format, the following are **three conditions of ONE academic-abstract benchmark**, not three independent benchmarks: **499/499, 497/497, and 499/499 human/AI inputs**. Shared controls are not independent authors to add together.
 
 | Detector / release | LLaDA abstracts | LLaDA rephrasing | LLaMA abstracts |
 |---|---:|---:|---:|
-| **FiveTrace V2** | **0.9920** | 0.7068 | **0.9960** |
-| Desklib v1.01 · 2025 | 0.9599 | 0.7989 | 0.9599 |
-| Tropa-mini · 2026 | 0.7291 | 0.3639 | 0.9366 |
-| DeBERTa-ConPara · AACL 2026 | 0.9870 | 0.6967 | 0.9890 |
-| DetectRL-X XLM-R · 2026 | 0.8778 | **0.8448** | 0.9417 |
-| MAGE · ACL 2024 · author | 0.9336 | 0.6567 | 0.9316 |
-| MAGE · raw sensitivity† | 0.9910 | 0.7952 | 0.9900 |
+| **FiveTrace V2** | **0.9920**<br>99.20% (0.80%) | 0.7068<br>46.28% (0.80%) | **0.9960**<br>100.00% (0.80%) |
+| Desklib v1.01 · 2025 | 0.9599<br>100.00% (8.02%) | 0.7989<br>68.21% (7.85%) | 0.9599<br>100.00% (8.02%) |
+| Tropa-mini · 2026 | 0.7291<br>49.30% (0.00%) | 0.3639<br>2.82% (0.00%) | 0.9366<br>87.37% (0.00%) |
+| DeBERTa-ConPara · AACL 2026 | 0.9870<br>99.60% (2.20%) | 0.6967<br>45.67% (2.21%) | 0.9890<br>100.00% (2.20%) |
+| DetectRL-X XLM-R · 2026 | 0.8778<br>87.17% (11.62%) | **0.8448**<br>80.68% (11.67%) | 0.9417<br>100.00% (11.62%) |
+| MAGE · ACL 2024 · author | 0.9336<br>100.00% (13.23%) | 0.6567<br>47.28% (13.28%) | 0.9316<br>99.60% (13.23%) |
+| MAGE · raw sensitivity† | 0.9910<br>100.00% (1.80%) | 0.7952<br>62.17% (1.81%) | 0.9900<br>99.80% (1.80%) |
 
 † Raw first-4096-token MAGE with softmax 0.5 is a **sensitivity control**, a second mode of the same detector rather than another competitor.
 
