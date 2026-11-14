@@ -1,0 +1,209 @@
+{
+  "model": "FiveTrace V2",
+  "detector_sha256": "e19f5e7b04d462dd2fb8ef8363368d53474246e560b308afcffb9ac7965dea0a",
+  "adapters": [
+    {
+      "adapter": "ai",
+      "train_units": 3000,
+      "dev_units": 160,
+      "trainable_parameters": 1605632,
+      "initial_dev_nll": 2.15035762367918,
+      "best_dev_nll": 2.011863083165314,
+      "best_step": 375,
+      "total_steps": 375,
+      "trained_tokens": 495317,
+      "nonzero_lora_B_norm_sum": 19.917041659355164,
+      "peak_cuda_GB": 4.175188064575195,
+      "elapsed_seconds": 476.6205048999982,
+      "config": {
+        "rank": 8,
+        "alpha": 16,
+        "target_modules": [
+          "q_proj",
+          "v_proj"
+        ],
+        "max_tokens": 256,
+        "batch_size": 2,
+        "gradient_accumulation": 4,
+        "dtype": "bfloat16",
+        "epochs": 1,
+        "peak_learning_rate": 0.0002
+      },
+      "objective": "teacher-forced causal LM on class-specific real text; no label words or classifier prompts in LM targets",
+      "weight_bytes": 6437272
+    },
+    {
+      "adapter": "human",
+      "train_units": 3000,
+      "dev_units": 160,
+      "trainable_parameters": 1605632,
+      "initial_dev_nll": 3.136628840036845,
+      "best_dev_nll": 3.078219650398376,
+      "best_step": 300,
+      "total_steps": 375,
+      "trained_tokens": 518329,
+      "nonzero_lora_B_norm_sum": 17.37954431772232,
+      "peak_cuda_GB": 4.174592971801758,
+      "elapsed_seconds": 495.14449509998667,
+      "config": {
+        "rank": 8,
+        "alpha": 16,
+        "target_modules": [
+          "q_proj",
+          "v_proj"
+        ],
+        "max_tokens": 256,
+        "batch_size": 2,
+        "gradient_accumulation": 4,
+        "dtype": "bfloat16",
+        "epochs": 1,
+        "peak_learning_rate": 0.0002
+      },
+      "objective": "teacher-forced causal LM on class-specific real text; no label words or classifier prompts in LM targets",
+      "weight_bytes": 6437272
+    }
+  ],
+  "roles": {
+    "head_train": {
+      "samples": 8000,
+      "groups": 4091,
+      "labels": {
+        "0": 4000,
+        "1": 4000
+      },
+      "sources": {
+        "HC3": 2814,
+        "C-ReD": 4678,
+        "CUDRT": 508
+      },
+      "generators": {
+        "human": 4000,
+        "chatgpt-early": 1407,
+        "deepseek-v3": 340,
+        "deepseek-r1": 340,
+        "qwen-3": 327,
+        "gpt-4o": 331,
+        "gemini-2.5-flash": 335,
+        "doubao-1.5-pro": 338,
+        "qwen": 59,
+        "qwen-2.5": 328,
+        "baichuan": 75,
+        "gpt4": 36,
+        "chatglm": 84
+      }
+    },
+    "fusion_train": {
+      "samples": 3000,
+      "groups": 1718,
+      "labels": {
+        "0": 1500,
+        "1": 1500
+      },
+      "sources": {
+        "C-ReD": 1558,
+        "HC3": 1030,
+        "CUDRT": 412
+      },
+      "generators": {
+        "human": 1500,
+        "chatgpt-early": 515,
+        "gemini-2.5-flash": 112,
+        "deepseek-r1": 117,
+        "qwen": 37,
+        "doubao-1.5-pro": 112,
+        "deepseek-v3": 114,
+        "baichuan": 62,
+        "qwen-3": 102,
+        "qwen-2.5": 112,
+        "gpt4": 23,
+        "gpt-4o": 110,
+        "chatglm": 84
+      }
+    },
+    "validation": {
+      "samples": 1600,
+      "groups": 1066,
+      "labels": {
+        "1": 800,
+        "0": 800
+      },
+      "sources": {
+        "HC3": 524,
+        "C-ReD": 876,
+        "CUDRT": 200
+      },
+      "generators": {
+        "chatgpt-early": 262,
+        "deepseek-r1": 68,
+        "human": 800,
+        "gemini-2.5-flash": 64,
+        "deepseek-v3": 66,
+        "qwen-3": 54,
+        "doubao-1.5-pro": 64,
+        "gpt-4o": 61,
+        "qwen": 21,
+        "chatglm": 40,
+        "baichuan": 25,
+        "qwen-2.5": 61,
+        "gpt4": 14
+      }
+    },
+    "test_seen": {
+      "samples": 2400,
+      "groups": 1407,
+      "labels": {
+        "1": 1200,
+        "0": 1200
+      },
+      "sources": {
+        "C-ReD": 1414,
+        "HC3": 774,
+        "CUDRT": 212
+      },
+      "generators": {
+        "gpt-4o": 99,
+        "chatgpt-early": 387,
+        "deepseek-r1": 108,
+        "human": 1200,
+        "doubao-1.5-pro": 102,
+        "deepseek-v3": 105,
+        "chatglm": 40,
+        "gemini-2.5-flash": 101,
+        "qwen-3": 93,
+        "qwen-2.5": 99,
+        "baichuan": 30,
+        "qwen": 27,
+        "gpt4": 9
+      }
+    },
+    "test_unseen": {
+      "samples": 800,
+      "groups": 515,
+      "labels": {
+        "0": 400,
+        "1": 400
+      },
+      "sources": {
+        "C-ReD": 800
+      },
+      "generators": {
+        "human": 400,
+        "claude-3.5-haiku": 400
+      }
+    }
+  },
+  "runtime_threshold": 0.5,
+  "recipe": "Historically selected V2 full LoRA architecture; no V3 weights or results are attributed to V2.",
+  "versions": {
+    "python": "3.13.5",
+    "torch": "2.9.1+cu128",
+    "torchvision": "0.24.1+cu128",
+    "transformers": "4.57.6",
+    "peft": "0.17.1",
+    "accelerate": "1.12.0",
+    "numpy": "2.5.1",
+    "scikit-learn": "1.9.0",
+    "jieba": "0.42.1",
+    "huggingface-hub": "0.36.2"
+  }
+}

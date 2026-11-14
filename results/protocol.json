@@ -1,0 +1,38 @@
+{
+  "version": "external-20261114-v2-public",
+  "evaluation_date": "2026-11-14",
+  "ours_threshold": 0.5,
+  "public_source_unique_inputs": 12502,
+  "new_source_inputs": 3185,
+  "training_sources": [
+    "C-ReD",
+    "HC3-Chinese",
+    "CUDRT"
+  ],
+  "primary_language": "zh",
+  "english": "experimental transfer; not bilingual fine-tuning",
+  "model_selection": "V2 architecture historically selected on validation; external test weights and 0.5 threshold frozen.",
+  "feature_groups": [
+    "classification head",
+    "proxy LM loss",
+    "proxy full-vocabulary token rank",
+    "sentence length",
+    "lexical distribution"
+  ],
+  "aggregation": "100-nonspace paragraph merge; ~600-character internal windows; character-weighted document score; paragraph-count ratios separate.",
+  "overlap": "Exclude both local detectors' known fitting/development/validation text and propagated source-family matches; also known XLM-R training matches. No semantic/pretraining guarantee.",
+  "source_pins": {
+    "arxiv_repository": "7786b2bd1bfd080c3f16343164c64a3d7cf39e9f",
+    "diffusion_outputs": "d1d8c8593a6b7db5c446f497fd000a0ce74dcded",
+    "mage": "0d82ca0fdf6ebef5babb813cc11bd8eb2552c846",
+    "mage_author_recipe": "6d11f851184b9f04166f952ddc1f47727f36710f"
+  },
+  "limitations": [
+    "Old-source holdouts are source-familiar to V2.",
+    "Historical tests influenced research design.",
+    "MAGE full training exposure and Base pretraining are not fully audited.",
+    "Input formatting and genre vary; results do not isolate generation architecture causally.",
+    "AI-only collections have no binary F1, AUROC, or human FPR.",
+    "Some older records are pre-cut detection units, not complete original articles."
+  ]
+}

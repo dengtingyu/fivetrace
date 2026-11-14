@@ -1,0 +1,300 @@
+{
+  "datasets": [
+    {
+      "path": "cred/CReD_composition_claude-3.5-haiku.csv",
+      "url": "https://raw.githubusercontent.com/HeraldofLight/C-ReD/b90072cd218b6ebdbd1d1478ce6e439677f18192/benchmark%20data/composition/CReD_composition_claude-3.5-haiku.csv",
+      "bytes": 2419408,
+      "sha256": "e8b767a27efe0c81b085ac1c3707f0426090017686dc12de8442f2d5cbf6fda7"
+    },
+    {
+      "path": "cred/CReD_composition_deepseek-r1.csv",
+      "url": "https://raw.githubusercontent.com/HeraldofLight/C-ReD/b90072cd218b6ebdbd1d1478ce6e439677f18192/benchmark%20data/composition/CReD_composition_deepseek-r1.csv",
+      "bytes": 3396434,
+      "sha256": "cb977c507be5f6eb45cc44ed633d40995e3e577dc6c90cb6a080531b5a94a9ac"
+    },
+    {
+      "path": "cred/CReD_composition_deepseek-v3.csv",
+      "url": "https://raw.githubusercontent.com/HeraldofLight/C-ReD/b90072cd218b6ebdbd1d1478ce6e439677f18192/benchmark%20data/composition/CReD_composition_deepseek-v3.csv",
+      "bytes": 3128460,
+      "sha256": "7f4bc0f34c1c6d42cd0ba9e5b626d95f4a1ba1eb8a57cd24e028feae78e5d08f"
+    },
+    {
+      "path": "cred/CReD_composition_doubao-1.5-pro.csv",
+      "url": "https://raw.githubusercontent.com/HeraldofLight/C-ReD/b90072cd218b6ebdbd1d1478ce6e439677f18192/benchmark%20data/composition/CReD_composition_doubao-1.5-pro.csv",
+      "bytes": 3225792,
+      "sha256": "6fcc5f1f57e5859d93aeb71f8497e6b7c3dd71130123c8ea8e1b8ace8ead7f58"
+    },
+    {
+      "path": "cred/CReD_composition_gemini-2.5-flash.csv",
+      "url": "https://raw.githubusercontent.com/HeraldofLight/C-ReD/b90072cd218b6ebdbd1d1478ce6e439677f18192/benchmark%20data/composition/CReD_composition_gemini-2.5-flash.csv",
+      "bytes": 4044254,
+      "sha256": "c6dd271e5dcbac76f034ffaa93b7952cd61f865f138a2c011561798b4c2a97ca"
+    },
+    {
+      "path": "cred/CReD_composition_gpt-4o.csv",
+      "url": "https://raw.githubusercontent.com/HeraldofLight/C-ReD/b90072cd218b6ebdbd1d1478ce6e439677f18192/benchmark%20data/composition/CReD_composition_gpt-4o.csv",
+      "bytes": 3500544,
+      "sha256": "0a884e3c1aac117b2034cb55b29246bc024f68d2d62eecfd23bfeb2b39975e73"
+    },
+    {
+      "path": "cred/CReD_composition_human.csv",
+      "url": "https://raw.githubusercontent.com/HeraldofLight/C-ReD/b90072cd218b6ebdbd1d1478ce6e439677f18192/benchmark%20data/composition/CReD_composition_human.csv",
+      "bytes": 2943201,
+      "sha256": "7a22c744dac5bdd3ff4391e71f0351c384f24f7030b554dac48dfb8a185b394e"
+    },
+    {
+      "path": "cred/CReD_composition_qwen-2.5.csv",
+      "url": "https://raw.githubusercontent.com/HeraldofLight/C-ReD/b90072cd218b6ebdbd1d1478ce6e439677f18192/benchmark%20data/composition/CReD_composition_qwen-2.5.csv",
+      "bytes": 2722316,
+      "sha256": "565d13d79162dce7ced318638e02dbff41b076aaed05f07f4f2bd05a2a7832e5"
+    },
+    {
+      "path": "cred/CReD_composition_qwen-3.csv",
+      "url": "https://raw.githubusercontent.com/HeraldofLight/C-ReD/b90072cd218b6ebdbd1d1478ce6e439677f18192/benchmark%20data/composition/CReD_composition_qwen-3.csv",
+      "bytes": 3364431,
+      "sha256": "d554af0ae846e1bf7196dd7251c6ae6cc6ff8921dec3751185612c7f05eca7e3"
+    },
+    {
+      "path": "cred/CReD_film_review_claude-3.5-haiku.csv",
+      "url": "https://raw.githubusercontent.com/HeraldofLight/C-ReD/b90072cd218b6ebdbd1d1478ce6e439677f18192/benchmark%20data/film%20review/CReD_film_review_claude-3.5-haiku.csv",
+      "bytes": 2038872,
+      "sha256": "517c28351661b8316d95f1d62df94949f6b7847595c00afc4386ad60feff2e2a"
+    },
+    {
+      "path": "cred/CReD_film_review_deepseek-r1.csv",
+      "url": "https://raw.githubusercontent.com/HeraldofLight/C-ReD/b90072cd218b6ebdbd1d1478ce6e439677f18192/benchmark%20data/film%20review/CReD_film_review_deepseek-r1.csv",
+      "bytes": 2295822,
+      "sha256": "98b5486929211acef4125b5871a37dfb3c6c6b4762b2df359dc523c5a1d92f2c"
+    },
+    {
+      "path": "cred/CReD_film_review_deepseek-v3.csv",
+      "url": "https://raw.githubusercontent.com/HeraldofLight/C-ReD/b90072cd218b6ebdbd1d1478ce6e439677f18192/benchmark%20data/film%20review/CReD_film_review_deepseek-v3.csv",
+      "bytes": 2265031,
+      "sha256": "8b1cbd49188fdbd770ed190abf9b23f812db78371d472b3acb873619b5acfb86"
+    },
+    {
+      "path": "cred/CReD_film_review_doubao-1.5-pro.csv",
+      "url": "https://raw.githubusercontent.com/HeraldofLight/C-ReD/b90072cd218b6ebdbd1d1478ce6e439677f18192/benchmark%20data/film%20review/CReD_film_review_doubao-1.5-pro.csv",
+      "bytes": 1895272,
+      "sha256": "00f4b701a011ad6da6eb027850ccf04f31bc80ba9952521545735de38160e30c"
+    },
+    {
+      "path": "cred/CReD_film_review_gemini-2.5-flash.csv",
+      "url": "https://raw.githubusercontent.com/HeraldofLight/C-ReD/b90072cd218b6ebdbd1d1478ce6e439677f18192/benchmark%20data/film%20review/CReD_film_review_gemini-2.5-flash.csv",
+      "bytes": 2391187,
+      "sha256": "4a81ad82f4e48949d765e4498e31819d7026eed6d2a48cf240ad05fbf93cec54"
+    },
+    {
+      "path": "cred/CReD_film_review_gpt-4o.csv",
+      "url": "https://raw.githubusercontent.com/HeraldofLight/C-ReD/b90072cd218b6ebdbd1d1478ce6e439677f18192/benchmark%20data/film%20review/CReD_film_review_gpt-4o.csv",
+      "bytes": 2231084,
+      "sha256": "b613dca493682bf39af15b64317b57eae61af6ac50e01be5f788454e78a67a56"
+    },
+    {
+      "path": "cred/CReD_film_review_human.csv",
+      "url": "https://raw.githubusercontent.com/HeraldofLight/C-ReD/b90072cd218b6ebdbd1d1478ce6e439677f18192/benchmark%20data/film%20review/CReD_film_review_human.csv",
+      "bytes": 1187422,
+      "sha256": "74c735b8ec4686fd555bb91898d1b4594f1f28b9b347fc97bae0db8f14316d75"
+    },
+    {
+      "path": "cred/CReD_film_review_qwen-2.5.csv",
+      "url": "https://raw.githubusercontent.com/HeraldofLight/C-ReD/b90072cd218b6ebdbd1d1478ce6e439677f18192/benchmark%20data/film%20review/CReD_film_review_qwen-2.5.csv",
+      "bytes": 2252431,
+      "sha256": "77d4dae3541c6306012b6d3aeaa3f45f0e8f213ea54e6f2bb077bb333b19a3b7"
+    },
+    {
+      "path": "cred/CReD_film_review_qwen-3.csv",
+      "url": "https://raw.githubusercontent.com/HeraldofLight/C-ReD/b90072cd218b6ebdbd1d1478ce6e439677f18192/benchmark%20data/film%20review/CReD_film_review_qwen-3.csv",
+      "bytes": 1940263,
+      "sha256": "7ccf4059fd8ca9503e6bac92539792ca92df5391594df988ad2dffe99eb02486"
+    },
+    {
+      "path": "cred/CReD_news_claude-3.5-haiku.csv",
+      "url": "https://raw.githubusercontent.com/HeraldofLight/C-ReD/b90072cd218b6ebdbd1d1478ce6e439677f18192/benchmark%20data/news/CReD_news_claude-3.5-haiku.csv",
+      "bytes": 4988075,
+      "sha256": "b4d98fcfc5ac5ceab261e5a4e155ea2fef5c03429dbc80d21f4cbae05ca55345"
+    },
+    {
+      "path": "cred/CReD_news_deepseek-r1.csv",
+      "url": "https://raw.githubusercontent.com/HeraldofLight/C-ReD/b90072cd218b6ebdbd1d1478ce6e439677f18192/benchmark%20data/news/CReD_news_deepseek-r1.csv",
+      "bytes": 5399644,
+      "sha256": "33d0075747245f5bff3b3acdf3c402e3d0210e81f9696f02e06e7bb2fc6b3bf5"
+    },
+    {
+      "path": "cred/CReD_news_deepseek-v3.csv",
+      "url": "https://raw.githubusercontent.com/HeraldofLight/C-ReD/b90072cd218b6ebdbd1d1478ce6e439677f18192/benchmark%20data/news/CReD_news_deepseek-v3.csv",
+      "bytes": 5012182,
+      "sha256": "4028167e37acb5379a476ecc78a5c65e19578e5ab5673a47ebf5b19e48bd7607"
+    },
+    {
+      "path": "cred/CReD_news_doubao-1.5-pro.csv",
+      "url": "https://raw.githubusercontent.com/HeraldofLight/C-ReD/b90072cd218b6ebdbd1d1478ce6e439677f18192/benchmark%20data/news/CReD_news_doubao-1.5-pro.csv",
+      "bytes": 4980963,
+      "sha256": "8a6640f830356b382e9b0afb5e7d9d61ae7c3e9a8857a68b5fa42f3b30e831c3"
+    },
+    {
+      "path": "cred/CReD_news_gemini-2.5-flash.csv",
+      "url": "https://raw.githubusercontent.com/HeraldofLight/C-ReD/b90072cd218b6ebdbd1d1478ce6e439677f18192/benchmark%20data/news/CReD_news_gemini-2.5-flash.csv",
+      "bytes": 6175029,
+      "sha256": "5ba96ee5bc80179f0728977f4d9eb42c37f038acf9c950cd88b97f43c602aa76"
+    },
+    {
+      "path": "cred/CReD_news_gpt-4o.csv",
+      "url": "https://raw.githubusercontent.com/HeraldofLight/C-ReD/b90072cd218b6ebdbd1d1478ce6e439677f18192/benchmark%20data/news/CReD_news_gpt-4o.csv",
+      "bytes": 6575977,
+      "sha256": "00ca9625b5f57f3aa1ce235375661b21fcc0aecf318d99208c43f70d4293bc0c"
+    },
+    {
+      "path": "cred/CReD_news_human.csv",
+      "url": "https://raw.githubusercontent.com/HeraldofLight/C-ReD/b90072cd218b6ebdbd1d1478ce6e439677f18192/benchmark%20data/news/CReD_news_human.csv",
+      "bytes": 3791165,
+      "sha256": "30aec5cadcc4bb8b28cf267bf1cc23f1f763fa1083bc0c80f6d2d65af147e3be"
+    },
+    {
+      "path": "cred/CReD_news_qwen-2.5.csv",
+      "url": "https://raw.githubusercontent.com/HeraldofLight/C-ReD/b90072cd218b6ebdbd1d1478ce6e439677f18192/benchmark%20data/news/CReD_news_qwen-2.5.csv",
+      "bytes": 5233962,
+      "sha256": "5bcc3c3eadc532ea7d4bb8583d94dfd91b59f249c38a3936f89afc48ade54436"
+    },
+    {
+      "path": "cred/CReD_news_qwen-3.csv",
+      "url": "https://raw.githubusercontent.com/HeraldofLight/C-ReD/b90072cd218b6ebdbd1d1478ce6e439677f18192/benchmark%20data/news/CReD_news_qwen-3.csv",
+      "bytes": 5375114,
+      "sha256": "9d59244e12cb486793134391572a9bfb7117e9ed199669a7e64dcc2bd7da93aa"
+    },
+    {
+      "path": "cred/CReD_paper_claude-3.5-haiku.csv",
+      "url": "https://raw.githubusercontent.com/HeraldofLight/C-ReD/b90072cd218b6ebdbd1d1478ce6e439677f18192/benchmark%20data/paper/CReD_paper_claude-3.5-haiku.csv",
+      "bytes": 2532886,
+      "sha256": "d5759379b1db4ac674a14ef61ebc255f9e5b973abcfa838000c92fc0e2198122"
+    },
+    {
+      "path": "cred/CReD_paper_deepseek-r1.csv",
+      "url": "https://raw.githubusercontent.com/HeraldofLight/C-ReD/b90072cd218b6ebdbd1d1478ce6e439677f18192/benchmark%20data/paper/CReD_paper_deepseek-r1.csv",
+      "bytes": 3073358,
+      "sha256": "4685da4d97caad4487b3ff5a751d4e081988bd47eef99562f80f539b1ff45fb5"
+    },
+    {
+      "path": "cred/CReD_paper_deepseek-v3.csv",
+      "url": "https://raw.githubusercontent.com/HeraldofLight/C-ReD/b90072cd218b6ebdbd1d1478ce6e439677f18192/benchmark%20data/paper/CReD_paper_deepseek-v3.csv",
+      "bytes": 2855065,
+      "sha256": "3803f676cf28ea718347fb55de13bbbf570225384b40bf50e7cb326e7dd3f89d"
+    },
+    {
+      "path": "cred/CReD_paper_doubao-1.5-pro.csv",
+      "url": "https://raw.githubusercontent.com/HeraldofLight/C-ReD/b90072cd218b6ebdbd1d1478ce6e439677f18192/benchmark%20data/paper/CReD_paper_doubao-1.5-pro.csv",
+      "bytes": 2852460,
+      "sha256": "24316dcecb70f737c12efd306231b088d262e86c895c352d33e30fb9681db371"
+    },
+    {
+      "path": "cred/CReD_paper_gemini-2.5-flash.csv",
+      "url": "https://raw.githubusercontent.com/HeraldofLight/C-ReD/b90072cd218b6ebdbd1d1478ce6e439677f18192/benchmark%20data/paper/CReD_paper_gemini-2.5-flash.csv",
+      "bytes": 3634800,
+      "sha256": "d78f000b78cc94e31f2c2615246a7933b4c78a2ae90b3ded84a01780522e3d05"
+    },
+    {
+      "path": "cred/CReD_paper_gpt-4o.csv",
+      "url": "https://raw.githubusercontent.com/HeraldofLight/C-ReD/b90072cd218b6ebdbd1d1478ce6e439677f18192/benchmark%20data/paper/CReD_paper_gpt-4o.csv",
+      "bytes": 3019964,
+      "sha256": "7e32e1c3c2f2ea8a2d83fcbe4952d2b72a4d2b7bd6dc9b24e65e64196679363e"
+    },
+    {
+      "path": "cred/CReD_paper_human.csv",
+      "url": "https://raw.githubusercontent.com/HeraldofLight/C-ReD/b90072cd218b6ebdbd1d1478ce6e439677f18192/benchmark%20data/paper/CReD_paper_human.csv",
+      "bytes": 1811850,
+      "sha256": "55e347b6d9e1e6df9dadaaf0c5c121052159da23b0d79c708fbdf2683b9d2918"
+    },
+    {
+      "path": "cred/CReD_paper_qwen-2.5.csv",
+      "url": "https://raw.githubusercontent.com/HeraldofLight/C-ReD/b90072cd218b6ebdbd1d1478ce6e439677f18192/benchmark%20data/paper/CReD_paper_qwen-2.5.csv",
+      "bytes": 2667297,
+      "sha256": "1b480ab161447ac806819a2e15ea033caaee9c5951b386e2dec0054eb6502bd8"
+    },
+    {
+      "path": "cred/CReD_paper_qwen-3.csv",
+      "url": "https://raw.githubusercontent.com/HeraldofLight/C-ReD/b90072cd218b6ebdbd1d1478ce6e439677f18192/benchmark%20data/paper/CReD_paper_qwen-3.csv",
+      "bytes": 2968455,
+      "sha256": "0a76d3e6ba56999338a09ae1ccb346021b0e1553620bdfdd1ce237596e01d0e4"
+    },
+    {
+      "path": "cred/CReD_question_answer_claude-3.5-haiku.csv",
+      "url": "https://raw.githubusercontent.com/HeraldofLight/C-ReD/b90072cd218b6ebdbd1d1478ce6e439677f18192/benchmark%20data/question%20answer/CReD_question_answer_claude-3.5-haiku.csv",
+      "bytes": 4425743,
+      "sha256": "3ed65e168e78f571fb01dbb276bbfd2d3b2946debb69532c059256a78691af1b"
+    },
+    {
+      "path": "cred/CReD_question_answer_deepseek-r1.csv",
+      "url": "https://raw.githubusercontent.com/HeraldofLight/C-ReD/b90072cd218b6ebdbd1d1478ce6e439677f18192/benchmark%20data/question%20answer/CReD_question_answer_deepseek-r1.csv",
+      "bytes": 5139659,
+      "sha256": "0d30186822963a73426823a3ddb9583e6990ec8adff5f3a80ebcb3fe45650493"
+    },
+    {
+      "path": "cred/CReD_question_answer_deepseek-v3.csv",
+      "url": "https://raw.githubusercontent.com/HeraldofLight/C-ReD/b90072cd218b6ebdbd1d1478ce6e439677f18192/benchmark%20data/question%20answer/CReD_question_answer_deepseek-v3.csv",
+      "bytes": 5217892,
+      "sha256": "5d3023558e015b2753c26556115dcb6362179618ed83b58b604a0ec8060f29c8"
+    },
+    {
+      "path": "cred/CReD_question_answer_doubao-1.5-pro.csv",
+      "url": "https://raw.githubusercontent.com/HeraldofLight/C-ReD/b90072cd218b6ebdbd1d1478ce6e439677f18192/benchmark%20data/question%20answer/CReD_question_answer_doubao-1.5-pro.csv",
+      "bytes": 5064359,
+      "sha256": "bb6124c9eb76dded9c1e12a6048970488be6b9752b61f39a89529d94d85a3a79"
+    },
+    {
+      "path": "cred/CReD_question_answer_gemini-2.5-flash.csv",
+      "url": "https://raw.githubusercontent.com/HeraldofLight/C-ReD/b90072cd218b6ebdbd1d1478ce6e439677f18192/benchmark%20data/question%20answer/CReD_question_answer_gemini-2.5-flash.csv",
+      "bytes": 7012147,
+      "sha256": "8c3497689e4223479e8790f8359ac3551b54743dcad4f8ec5e6c01a9b7d37d0a"
+    },
+    {
+      "path": "cred/CReD_question_answer_gpt-4o.csv",
+      "url": "https://raw.githubusercontent.com/HeraldofLight/C-ReD/b90072cd218b6ebdbd1d1478ce6e439677f18192/benchmark%20data/question%20answer/CReD_question_answer_gpt-4o.csv",
+      "bytes": 5875635,
+      "sha256": "471c4eca8310aae50ed39ad60f6c45cf17e39d33fd456cff1310877f9328398c"
+    },
+    {
+      "path": "cred/CReD_question_answer_human.csv",
+      "url": "https://raw.githubusercontent.com/HeraldofLight/C-ReD/b90072cd218b6ebdbd1d1478ce6e439677f18192/benchmark%20data/question%20answer/CReD_question_answer_human.csv",
+      "bytes": 3986774,
+      "sha256": "e1373fc339e147821016f770780aaa1987f932487ab795a08f15549ef7a4edd9"
+    },
+    {
+      "path": "cred/CReD_question_answer_qwen-2.5.csv",
+      "url": "https://raw.githubusercontent.com/HeraldofLight/C-ReD/b90072cd218b6ebdbd1d1478ce6e439677f18192/benchmark%20data/question%20answer/CReD_question_answer_qwen-2.5.csv",
+      "bytes": 4818821,
+      "sha256": "5ce3dcfec64892c21ab2df2cdb3aec6437a909137cdc83397bd507ca410f6d8f"
+    },
+    {
+      "path": "cred/CReD_question_answer_qwen-3.csv",
+      "url": "https://raw.githubusercontent.com/HeraldofLight/C-ReD/b90072cd218b6ebdbd1d1478ce6e439677f18192/benchmark%20data/question%20answer/CReD_question_answer_qwen-3.csv",
+      "bytes": 5187100,
+      "sha256": "80636d515e20dbd90277b95fdfe3ac0818668060e4469176e75db1e2909d098e"
+    },
+    {
+      "path": "hc3/all.jsonl",
+      "url": "https://huggingface.co/datasets/Hello-SimpleAI/HC3-Chinese/resolve/09a687b8dc164b89e7df95abf15df3b216bc31c2/all.jsonl?download=true",
+      "bytes": 21726779,
+      "sha256": "425e7071bbd5dd88efd85d51e28a5adec9c72e04d96c52d194bdfb95fef00b0d"
+    },
+    {
+      "path": "nlpcc/train_data.json",
+      "url": "https://media.githubusercontent.com/media/NLP2CT/NLPCC-2026-Task6-Detection/961a485fa72f9821d6315836d46c9d94818b18b1/data/train_data.json",
+      "bytes": 212700850,
+      "sha256": "d07059d8af0c7ba86629a8ceba3f09669d79f13356f09d0853861b53a8d5c01f"
+    }
+  ],
+  "base": {
+    "model_id": "Qwen/Qwen3-1.7B-Base",
+    "revision": "ea980cb0a6c2ae4b936e82123acc929f1cec04c1",
+    "url": "https://huggingface.co/Qwen/Qwen3-1.7B-Base",
+    "weight_sha256": {
+      "model.safetensors": "6df85b39330e5a425ee36253d0f894e4387e4f0a15b9c53cb467d668e6b3a841"
+    },
+    "total_weight_bytes": 3441185608
+  },
+  "revisions": {
+    "nlpcc": "961a485fa72f9821d6315836d46c9d94818b18b1",
+    "cred": "b90072cd218b6ebdbd1d1478ce6e439677f18192",
+    "hc3": "09a687b8dc164b89e7df95abf15df3b216bc31c2"
+  }
+}
