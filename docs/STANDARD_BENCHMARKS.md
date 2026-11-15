@@ -12,6 +12,12 @@ Two additional datasets, not a renamed set of abstract conditions. All six check
 - Intel uses the same Summary/Strengths/Weaknesses/Questions sections and headings for both labels. Ratings, confidence, paper IDs and source labels are never passed to a detector.
 - Google Drive publishes no independently pinned checksum here: byte ranges/total size were validated and a full SHA-256 was recorded at acquisition. Intel complete-file SHA-256 matches the pinned public LFS metadata. Dataset rows and record IDs stay local.
 
+## Label semantics: official negative class is not pure-human provenance
+
+**COLING label semantics (post-hoc audit):** 75 of the 300 official human-class negatives are MixSet `gpt4_humanize`/`2llama_humanize` texts. The [MixSet authors](https://llm-coauthor.github.io/) describe humanize as editing machine-generated text. Consequently, human FPR in this column means **official-negative-class FPR**, not exclusively false accusations on purely human writing. This applies to every detector; all 600 original labels/inputs and published scores are retained.
+
+This clarification was added after the frozen evaluation. It changes interpretation, not labels, selection, thresholds, predictions or metrics. Mixed/edited-source errors should be read separately from the other source strata.
+
 ## Fixed native policies
 
 Same [checkpoint identities and native input policies](RECENT_COMPARISON.md) as the earlier comparison. V2 uses the production paragraph/sliding-window score at 0.5; Desklib first768 at0.5; Tropa native sentence chunks at0.9755912190656111; ConPara normalized first512, margin >2.9423828125; XLM-R first512 at0.5; MAGE original preprocessing and raw class0 logit >3.08583984375, CPU FP32, maximum4096. MAGE author decisions were checked against its pinned original detect function.

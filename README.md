@@ -41,7 +41,7 @@ Macro-F1 averages the human-class and AI-class F1 scores. AI recall uses AI inpu
 
 ## Two additional standard benchmarks
 
-Beyond the earlier sources, we added the **COLING 2025 GenAI Task 1 official English test** and the **Intel AI Peer Review Detection Benchmark ICLR2024 test**. Sources, sampling, checkpoints and thresholds were fixed before prediction: **300 human + 300 official machine-class labels**, and **50 human reviews matched to 50 papers with 50 reviews from each of 5 generators**. These are fixed subsets, **not full official leaderboard scores**.
+Beyond the earlier sources, we added the **COLING 2025 GenAI Task 1 official English test** and the **Intel AI Peer Review Detection Benchmark ICLR2024 test**. Sources, sampling, checkpoints and thresholds were fixed before prediction: **300 official human-class negatives + 300 machine-class labels**, and **50 human reviews matched to 50 papers with 50 reviews from each of 5 generators**. These are fixed subsets, **not full official leaderboard scores**.
 
 Each cell shows **Macro-F1 ↑** on the first line and **AI recall ↑ (human FPR ↓)** on the second. Bold scores mark column-highest Macro-F1 only.
 
@@ -53,6 +53,8 @@ Each cell shows **Macro-F1 ↑** on the first line and **AI recall ↑ (human FP
 | ConPara (AACL 2026) | 0.8127<br>92.67% (29.67%) | 0.9187<br>98.40% (18.00%) |
 | DetectRL-X XLM-R (2026) | 0.7647<br>60.00% (5.67%) | 0.6877<br>73.60% (14.00%) |
 | MAGE author (ACL 2024) | 0.7409<br>79.67% (31.33%) | 0.7220<br>87.20% (38.00%) |
+
+**COLING label semantics (post-hoc audit):** 75 of the 300 official human-class negatives are MixSet `gpt4_humanize`/`2llama_humanize` texts. The [MixSet authors](https://llm-coauthor.github.io/) describe humanize as editing machine-generated text. Consequently, human FPR in this column means **official-negative-class FPR**, not exclusively false accusations on purely human writing. This applies to every detector; all 600 original labels/inputs and published scores are retained.
 
 **At the frozen native operating points, V2 has higher Macro-F1 than Desklib, official XLM-R and MAGE on both slices.** Tropa-mini has higher point estimates; paired intervals for V2 vs. Tropa/ConPara cross zero, so these samples do not establish a statistical separation.
 
