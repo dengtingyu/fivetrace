@@ -56,7 +56,9 @@ Each cell shows **Macro-F1 ↑** on the first line and **AI recall ↑ (human FP
 
 **At the frozen native operating points, V2 has higher Macro-F1 than Desklib, official XLM-R and MAGE on both slices.** Tropa-mini has higher point estimates; paired intervals for V2 vs. Tropa/ConPara cross zero, so these samples do not establish a statistical separation.
 
-![Two additional standard benchmarks and derived local stress tests](assets/standard_benchmarks.svg)
+Each chart cell shows Macro-F1 above AI recall (human FPR); colors and gold outlines encode Macro-F1 only.
+
+![Additional benchmarks: Macro-F1, AI recall and human false-positive rate](assets/standard_benchmarks.svg)
 
 Columns use common supported inputs across all 6 detectors; Intel retains complete paper pairs. COLING includes official mixed/edited tasks with their original labels. The [full report](docs/STANDARD_BENCHMARKS.md) separates source/tasks and generators. The two right-hand columns reuse the same texts as clean/zero-width stress conditions, **not extra independent benchmarks**. Known fit/prior-test overlap checks, source familiarity and limits are disclosed. No new test data was used for fitting or threshold calibration.
 
@@ -64,7 +66,9 @@ Columns use common supported inputs across all 6 detectors; Intel retains comple
 
 We added author-published **Desklib (2025), Tropa-mini (2026), and DeBERTa-ConPara (AACL-IJCNLP 2026)**, each scored on all **6,861 eligible public English inputs**. Alongside the official DetectRL-X XLM-R and MAGE, we compare **6 detectors** on the common supported inputs within each group; the MAGE author recipe exceeds its context limit on 6 older-source inputs. V2 was not retrained, and no thresholds were fitted to these test labels.
 
-![Six-condition external Macro-F1 comparison with recent open detectors](assets/benchmark_comparison.svg)
+Each chart cell shows Macro-F1 above AI recall (human FPR); colors and gold outlines encode Macro-F1 only.
+
+![Recent detectors: Macro-F1, AI recall and human false-positive rate](assets/benchmark_comparison.svg)
 
 First, three different sources: **643/48, 500/382, and 150/600 human/AI inputs** respectively. Every detector uses the same inputs within a column; sources have different distributions.
 

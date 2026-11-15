@@ -56,7 +56,9 @@ Macro-F1 是人工类与 AI 类 F1 的平均值。AI 检出率的分母是 AI �
 
 **在这两套子集、各自预设工作点的 Macro-F1 上，V2 均高于 Desklib、官方 XLM-R 和 MAGE。** Tropa-mini 的点估计更高；V2 与 Tropa／ConPara 的成对差值区间均跨零，当前样本尚不能确定统计上的优劣。
 
-![两套额外标准 benchmark 与派生压力测试](assets/standard_benchmarks.svg)
+图中每格上行为 Macro-F1，下行为 AI 检出率（人工误报率）；颜色与金框仅按 Macro-F1 标记。
+
+![额外标准 benchmark：Macro-F1、AI 检出率及人工误报率](assets/standard_benchmarks.svg)
 
 各列取全部 6 个检测器共同支持的输入；Intel 按完整论文配对过滤。COLING 含混写、改写等官方任务，保留官方标签，并在[完整报告](docs/STANDARD_BENCHMARKS.md)按来源／任务、生成器列出结果。图中右侧两列是同一批文本的干净／零宽字符压力条件，**不额外计作独立 benchmark**。拟合／历史外测重合检查、来源熟悉度和局限均公开；没有使用新测试数据训练或调阈值。
 
@@ -64,7 +66,9 @@ Macro-F1 是人工类与 AI 类 F1 的平均值。AI 检出率的分母是 AI �
 
 新增 **Desklib（2025）、Tropa-mini（2026）、DeBERTa-ConPara（AACL-IJCNLP 2026）**，均采用作者公开权重，三款模型各测满 **6,861 条合格公开英文输入**。与 DetectRL-X 官方 XLM-R、MAGE 一起，共比较 **6 个检测器**，各组取共同支持的输入；MAGE 作者流程有 6 条旧来源输入超出上下文限制。这轮对比没有重新训练 V2，也没有利用测试标签调阈值。
 
-![近期开放检测器的六组外测 Macro-F1 对比](assets/benchmark_comparison.svg)
+图中每格上行为 Macro-F1，下行为 AI 检出率（人工误报率）；颜色与金框仅按 Macro-F1 标记。
+
+![近期开放检测器：Macro-F1、AI 检出率及人工误报率](assets/benchmark_comparison.svg)
 
 先看三个不同来源，人工／AI 数分别为 **643／48、500／382、150／600**。各模型在每列使用同一批输入，不能把各列当作同一分布的重复实验。
 
