@@ -1,9 +1,7 @@
 # Publication boundary
 
-This repository contains selected source, documentation, synthetic tests and aggregate statistics only. No dataset rows, source documents, real example paragraphs, sample-ID lists, individual predictions, embeddings, token sequences, adapters, Base weights, private paths or credentials are included.
+The GitHub repository contains selected source, documentation, synthetic tests, static figures and aggregate metrics. It includes no dataset rows, source documents, real writing samples, original sample-ID lists, per-record predictions, embeddings, token sequences, caches, adapters, Base weights, private paths or credentials.
 
-prepare_sources.py downloads public pinned resources into ignored local directories. train.py runs local training. detect.py and evaluate.py use local model files; no uploading or repository publishing is implemented. The project implements no telemetry; third-party packages retain their own behavior.
+V3 aggregates are copied through an explicit field selection. Input IDs, exact per-input hashes and local ancestry lists stay in ignored runtime artifacts. Public checkpoint/file hashes document provenance without distributing source texts or model weights. Original datasets retain their upstream licenses and terms.
 
-Results are copied by a conservative aggregate-field selection. Private documents and local generation regressions are not included in public source tables. Source-file hashes and public URLs describe upstream provenance, not dataset redistribution. Runtime manifests/predictions may contain record identifiers and must stay local.
-
-PUBLICATION_MANIFEST.json is an explicit reviewed allowlist with file checksums. Gitignore is an additional guard, not a substitute for checking staged files. This release ships source and aggregates, not ready-to-run trained weights; download the upstream Base and train locally.
+Preparation commands download pinned public model assets or consume user-supplied local splits into ignored local directories. Training, detection and evaluation do not publish. No telemetry is implemented by this project; third-party packages have their own behavior. PUBLICATION_MANIFEST.json lists reviewed public files and their SHA256 checksums. Gitignore is an additional guard, not a substitute for inspecting staged changes.

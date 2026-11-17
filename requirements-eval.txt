@@ -6,3 +6,5 @@ scikit-learn>=1.6,<2
 numpy>=1.26
 sentencepiece>=0.2
 protobuf>=7.36.1
+
+matplotlib>=3.9

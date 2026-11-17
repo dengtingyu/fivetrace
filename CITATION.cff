@@ -1,8 +1,8 @@
 cff-version: 1.2.0
 message: "Please cite this implementation and the upstream corpora and models."
-title: "FiveTrace V2: corpus-trained local proxies for AI-text detection"
+title: "FiveTrace V3: corpus-trained local proxies for AI-text detection"
 type: software
-version: 2.0.0
+version: 3.0.0
 authors:
   - name: dengtingyu
 repository-code: "https://github.com/dengtingyu/fivetrace"

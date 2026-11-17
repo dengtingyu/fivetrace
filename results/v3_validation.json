@@ -1,0 +1,30 @@
+{
+  "version": "3.0.0",
+  "runtime": {
+    "status": "passed",
+    "documents": 2,
+    "paragraphs": 6,
+    "maximum_absolute_document_score_difference": 3.504941853943455e-06,
+    "identical_binary_decisions": true,
+    "classifier_single_vs_batch_maximum_absolute_logit_difference": 0.00010991096496582031,
+    "published_package_used": true,
+    "real_cuda_models_used": true,
+    "classifier_precision": "FP32; autocast and TF32 disabled",
+    "elapsed_seconds": 14.82280609999998,
+    "scope": "Two existing external examples plus synthetic batch invariance; implementation parity check, not a new accuracy estimate."
+  },
+  "tests": {
+    "status": "passed",
+    "command": "python -m unittest discover -s tests -v",
+    "tests_run": 77,
+    "failures": 0,
+    "errors": 0,
+    "elapsed_seconds": 3.394,
+    "scope": "Synthetic split, geometry, feature, recovery, native-threshold, local training scaffold and publication consistency tests; no benchmark rows are embedded in the tests."
+  },
+  "publication_policy": "Source, synthetic tests, documentation and aggregate metrics only. No data or weights.",
+  "link_checks": {
+    "status": "passed",
+    "broken_relative_markdown_links": 0
+  }
+}

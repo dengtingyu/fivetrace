@@ -1,0 +1,1819 @@
+{
+  "scope": "Separate covered-generator protocol A, not a comparison with official detectors. No B-family or B-method evaluation in this release.",
+  "classifier_precision": "FP32 stable inference on the same selected head and frozen fusion; no refitting or threshold selection.",
+  "V3": {
+    "overall": {
+      "records": 20000,
+      "groups": 10000,
+      "human": 10000,
+      "AI": 10000,
+      "AI_recall": 0.9972,
+      "human_FPR": 0.0081,
+      "macro_F1": 0.9945499617271063,
+      "balanced_accuracy": 0.9945499999999999,
+      "AUROC": 0.9996077500000001,
+      "confusion_matrix": [
+        [
+          9919,
+          81
+        ],
+        [
+          28,
+          9972
+        ]
+      ]
+    },
+    "strata": {
+      "language": {
+        "en": {
+          "records": 10000,
+          "groups": 5000,
+          "human": 5000,
+          "AI": 5000,
+          "AI_recall": 0.9982,
+          "human_FPR": 0.0106,
+          "macro_F1": 0.9937998799656762,
+          "balanced_accuracy": 0.9938,
+          "AUROC": 0.99971016,
+          "confusion_matrix": [
+            [
+              4947,
+              53
+            ],
+            [
+              9,
+              4991
+            ]
+          ]
+        },
+        "zh": {
+          "records": 10000,
+          "groups": 5000,
+          "human": 5000,
+          "AI": 5000,
+          "AI_recall": 0.9962,
+          "human_FPR": 0.0056,
+          "macro_F1": 0.9952999961929969,
+          "balanced_accuracy": 0.9953,
+          "AUROC": 0.99950644,
+          "confusion_matrix": [
+            [
+              4972,
+              28
+            ],
+            [
+              19,
+              4981
+            ]
+          ]
+        }
+      },
+      "domain": {
+        "academic": {
+          "records": 4874,
+          "groups": 2437,
+          "human": 2437,
+          "AI": 2437,
+          "AI_recall": 0.9946655724251129,
+          "human_FPR": 0.02421009437833402,
+          "macro_F1": 0.9852264231010164,
+          "balanced_accuracy": 0.9852277390233894,
+          "AUROC": 0.9986408415332695,
+          "confusion_matrix": [
+            [
+              2378,
+              59
+            ],
+            [
+              13,
+              2424
+            ]
+          ]
+        },
+        "expository": {
+          "records": 5158,
+          "groups": 2579,
+          "human": 2579,
+          "AI": 2579,
+          "AI_recall": 0.9992245056223342,
+          "human_FPR": 0.0015509887553315238,
+          "macro_F1": 0.9988367582586104,
+          "balanced_accuracy": 0.9988367584335013,
+          "AUROC": 0.9998955082216987,
+          "confusion_matrix": [
+            [
+              2575,
+              4
+            ],
+            [
+              2,
+              2577
+            ]
+          ]
+        },
+        "narrative": {
+          "records": 3064,
+          "groups": 1532,
+          "human": 1532,
+          "AI": 1532,
+          "AI_recall": 0.9993472584856397,
+          "human_FPR": 0.0,
+          "macro_F1": 0.9996736292080555,
+          "balanced_accuracy": 0.9996736292428199,
+          "AUROC": 1.0,
+          "confusion_matrix": [
+            [
+              1532,
+              0
+            ],
+            [
+              1,
+              1531
+            ]
+          ]
+        },
+        "news": {
+          "records": 4834,
+          "groups": 2417,
+          "human": 2417,
+          "AI": 2417,
+          "AI_recall": 0.9971038477451386,
+          "human_FPR": 0.002068680182043856,
+          "macro_F1": 0.9975175833566134,
+          "balanced_accuracy": 0.9975175837815474,
+          "AUROC": 0.9996495996414858,
+          "confusion_matrix": [
+            [
+              2412,
+              5
+            ],
+            [
+              7,
+              2410
+            ]
+          ]
+        },
+        "opinion": {
+          "records": 366,
+          "groups": 183,
+          "human": 183,
+          "AI": 183,
+          "AI_recall": 0.994535519125683,
+          "human_FPR": 0.01092896174863388,
+          "macro_F1": 0.9918032174984137,
+          "balanced_accuracy": 0.9918032786885246,
+          "AUROC": 0.9955209173161337,
+          "confusion_matrix": [
+            [
+              181,
+              2
+            ],
+            [
+              1,
+              182
+            ]
+          ]
+        },
+        "qa": {
+          "records": 1704,
+          "groups": 852,
+          "human": 852,
+          "AI": 852,
+          "AI_recall": 0.9953051643192489,
+          "human_FPR": 0.012910798122065728,
+          "macro_F1": 0.9911970345440626,
+          "balanced_accuracy": 0.9911971830985916,
+          "AUROC": 0.9995880998038309,
+          "confusion_matrix": [
+            [
+              841,
+              11
+            ],
+            [
+              4,
+              848
+            ]
+          ]
+        }
+      },
+      "length_bin": {
+        "long": {
+          "records": 3966,
+          "groups": 1983,
+          "human": 1983,
+          "AI": 1983,
+          "AI_recall": 0.9919314170448815,
+          "human_FPR": 0.018658598083711547,
+          "macro_F1": 0.9866360347936879,
+          "balanced_accuracy": 0.986636409480585,
+          "AUROC": 0.9981758716106574,
+          "confusion_matrix": [
+            [
+              1946,
+              37
+            ],
+            [
+              16,
+              1967
+            ]
+          ]
+        },
+        "medium": {
+          "records": 14508,
+          "groups": 7254,
+          "human": 7254,
+          "AI": 7254,
+          "AI_recall": 0.9994485800937414,
+          "human_FPR": 0.0030328094844223876,
+          "macro_F1": 0.9982078825460109,
+          "balanced_accuracy": 0.9982078853046595,
+          "AUROC": 0.9999747246872304,
+          "confusion_matrix": [
+            [
+              7232,
+              22
+            ],
+            [
+              4,
+              7250
+            ]
+          ]
+        },
+        "short": {
+          "records": 1526,
+          "groups": 763,
+          "human": 763,
+          "AI": 763,
+          "AI_recall": 0.9895150720838795,
+          "human_FPR": 0.028833551769331587,
+          "macro_F1": 0.9803391053391053,
+          "balanced_accuracy": 0.9803407601572739,
+          "AUROC": 0.9981483040148136,
+          "confusion_matrix": [
+            [
+              741,
+              22
+            ],
+            [
+              8,
+              755
+            ]
+          ]
+        }
+      },
+      "matched_generator_family": {
+        "anthropic": {
+          "records": 586,
+          "groups": 293,
+          "human": 293,
+          "AI": 293,
+          "AI_recall": 1.0,
+          "human_FPR": 0.017064846416382253,
+          "macro_F1": 0.9914669555670106,
+          "balanced_accuracy": 0.9914675767918089,
+          "AUROC": 1.0,
+          "confusion_matrix": [
+            [
+              288,
+              5
+            ],
+            [
+              0,
+              293
+            ]
+          ]
+        },
+        "deepseek": {
+          "records": 4306,
+          "groups": 2153,
+          "human": 2153,
+          "AI": 2153,
+          "AI_recall": 0.9990710636321412,
+          "human_FPR": 0.003251277287505806,
+          "macro_F1": 0.9979098903541876,
+          "balanced_accuracy": 0.9979098931723177,
+          "AUROC": 0.9999861932355916,
+          "confusion_matrix": [
+            [
+              2146,
+              7
+            ],
+            [
+              2,
+              2151
+            ]
+          ]
+        },
+        "doubao": {
+          "records": 634,
+          "groups": 317,
+          "human": 317,
+          "AI": 317,
+          "AI_recall": 0.9968454258675079,
+          "human_FPR": 0.00946372239747634,
+          "macro_F1": 0.9936907889499244,
+          "balanced_accuracy": 0.9936908517350158,
+          "AUROC": 0.9988058394451135,
+          "confusion_matrix": [
+            [
+              314,
+              3
+            ],
+            [
+              1,
+              316
+            ]
+          ]
+        },
+        "gemini": {
+          "records": 4084,
+          "groups": 2042,
+          "human": 2042,
+          "AI": 2042,
+          "AI_recall": 0.9990205680705191,
+          "human_FPR": 0.0014691478942213516,
+          "macro_F1": 0.9987757100147461,
+          "balanced_accuracy": 0.9987757100881489,
+          "AUROC": 0.9999899274875028,
+          "confusion_matrix": [
+            [
+              2039,
+              3
+            ],
+            [
+              2,
+              2040
+            ]
+          ]
+        },
+        "glm": {
+          "records": 38,
+          "groups": 19,
+          "human": 19,
+          "AI": 19,
+          "AI_recall": 0.47368421052631576,
+          "human_FPR": 0.0,
+          "macro_F1": 0.7172619047619048,
+          "balanced_accuracy": 0.7368421052631579,
+          "AUROC": 0.889196675900277,
+          "confusion_matrix": [
+            [
+              19,
+              0
+            ],
+            [
+              10,
+              9
+            ]
+          ]
+        },
+        "llada": {
+          "records": 68,
+          "groups": 34,
+          "human": 34,
+          "AI": 34,
+          "AI_recall": 0.8529411764705882,
+          "human_FPR": 0.0,
+          "macro_F1": 0.9260708849749946,
+          "balanced_accuracy": 0.9264705882352942,
+          "AUROC": 0.9870242214532872,
+          "confusion_matrix": [
+            [
+              34,
+              0
+            ],
+            [
+              5,
+              29
+            ]
+          ]
+        },
+        "llama": {
+          "records": 120,
+          "groups": 60,
+          "human": 60,
+          "AI": 60,
+          "AI_recall": 1.0,
+          "human_FPR": 0.0,
+          "macro_F1": 1.0,
+          "balanced_accuracy": 1.0,
+          "AUROC": 1.0,
+          "confusion_matrix": [
+            [
+              60,
+              0
+            ],
+            [
+              0,
+              60
+            ]
+          ]
+        },
+        "openai": {
+          "records": 5602,
+          "groups": 2801,
+          "human": 2801,
+          "AI": 2801,
+          "AI_recall": 0.9975008925383791,
+          "human_FPR": 0.021420921099607283,
+          "macro_F1": 0.9880389150975339,
+          "balanced_accuracy": 0.988039985719386,
+          "AUROC": 0.9993706027109969,
+          "confusion_matrix": [
+            [
+              2741,
+              60
+            ],
+            [
+              7,
+              2794
+            ]
+          ]
+        },
+        "qwen": {
+          "records": 4562,
+          "groups": 2281,
+          "human": 2281,
+          "AI": 2281,
+          "AI_recall": 0.9995615957913196,
+          "human_FPR": 0.00131521262604121,
+          "macro_F1": 0.9991231914141181,
+          "balanced_accuracy": 0.9991231915826393,
+          "AUROC": 0.9998554669158581,
+          "confusion_matrix": [
+            [
+              2278,
+              3
+            ],
+            [
+              1,
+              2280
+            ]
+          ]
+        }
+      },
+      "matched_generator_language": {
+        "en:deepseek-v3": {
+          "records": 2294,
+          "groups": 1147,
+          "human": 1147,
+          "AI": 1147,
+          "AI_recall": 0.999128160418483,
+          "human_FPR": 0.0017436791630340018,
+          "macro_F1": 0.9986922403792161,
+          "balanced_accuracy": 0.9986922406277244,
+          "AUROC": 0.9999923989574411,
+          "confusion_matrix": [
+            [
+              1145,
+              2
+            ],
+            [
+              1,
+              1146
+            ]
+          ]
+        },
+        "en:gemini-2.5-flash": {
+          "records": 2186,
+          "groups": 1093,
+          "human": 1093,
+          "AI": 1093,
+          "AI_recall": 1.0,
+          "human_FPR": 0.0,
+          "macro_F1": 1.0,
+          "balanced_accuracy": 1.0,
+          "AUROC": 1.0,
+          "confusion_matrix": [
+            [
+              1093,
+              0
+            ],
+            [
+              0,
+              1093
+            ]
+          ]
+        },
+        "en:gpt-4o": {
+          "records": 3218,
+          "groups": 1609,
+          "human": 1609,
+          "AI": 1609,
+          "AI_recall": 0.9981354878806712,
+          "human_FPR": 0.030453697949036667,
+          "macro_F1": 0.9838375924140148,
+          "balanced_accuracy": 0.9838408949658173,
+          "AUROC": 0.9993251910767625,
+          "confusion_matrix": [
+            [
+              1560,
+              49
+            ],
+            [
+              3,
+              1606
+            ]
+          ]
+        },
+        "en:llada": {
+          "records": 68,
+          "groups": 34,
+          "human": 34,
+          "AI": 34,
+          "AI_recall": 0.8529411764705882,
+          "human_FPR": 0.0,
+          "macro_F1": 0.9260708849749946,
+          "balanced_accuracy": 0.9264705882352942,
+          "AUROC": 0.9870242214532872,
+          "confusion_matrix": [
+            [
+              34,
+              0
+            ],
+            [
+              5,
+              29
+            ]
+          ]
+        },
+        "en:llama-unversioned": {
+          "records": 120,
+          "groups": 60,
+          "human": 60,
+          "AI": 60,
+          "AI_recall": 1.0,
+          "human_FPR": 0.0,
+          "macro_F1": 1.0,
+          "balanced_accuracy": 1.0,
+          "AUROC": 1.0,
+          "confusion_matrix": [
+            [
+              60,
+              0
+            ],
+            [
+              0,
+              60
+            ]
+          ]
+        },
+        "en:qwen-max": {
+          "records": 2114,
+          "groups": 1057,
+          "human": 1057,
+          "AI": 1057,
+          "AI_recall": 1.0,
+          "human_FPR": 0.001892147587511826,
+          "macro_F1": 0.9990539253594546,
+          "balanced_accuracy": 0.9990539262062441,
+          "AUROC": 0.9995050342403529,
+          "confusion_matrix": [
+            [
+              1055,
+              2
+            ],
+            [
+              0,
+              1057
+            ]
+          ]
+        },
+        "zh:chatglm": {
+          "records": 38,
+          "groups": 19,
+          "human": 19,
+          "AI": 19,
+          "AI_recall": 0.47368421052631576,
+          "human_FPR": 0.0,
+          "macro_F1": 0.7172619047619048,
+          "balanced_accuracy": 0.7368421052631579,
+          "AUROC": 0.889196675900277,
+          "confusion_matrix": [
+            [
+              19,
+              0
+            ],
+            [
+              10,
+              9
+            ]
+          ]
+        },
+        "zh:chatgpt-early": {
+          "records": 376,
+          "groups": 188,
+          "human": 188,
+          "AI": 188,
+          "AI_recall": 1.0,
+          "human_FPR": 0.047872340425531915,
+          "macro_F1": 0.9760501079302168,
+          "balanced_accuracy": 0.976063829787234,
+          "AUROC": 0.9987833861475781,
+          "confusion_matrix": [
+            [
+              179,
+              9
+            ],
+            [
+              0,
+              188
+            ]
+          ]
+        },
+        "zh:chatgpt-unversioned": {
+          "records": 116,
+          "groups": 58,
+          "human": 58,
+          "AI": 58,
+          "AI_recall": 0.9827586206896551,
+          "human_FPR": 0.0,
+          "macro_F1": 0.9913786696395392,
+          "balanced_accuracy": 0.9913793103448276,
+          "AUROC": 1.0,
+          "confusion_matrix": [
+            [
+              58,
+              0
+            ],
+            [
+              1,
+              57
+            ]
+          ]
+        },
+        "zh:claude-3.5-haiku": {
+          "records": 586,
+          "groups": 293,
+          "human": 293,
+          "AI": 293,
+          "AI_recall": 1.0,
+          "human_FPR": 0.017064846416382253,
+          "macro_F1": 0.9914669555670106,
+          "balanced_accuracy": 0.9914675767918089,
+          "AUROC": 1.0,
+          "confusion_matrix": [
+            [
+              288,
+              5
+            ],
+            [
+              0,
+              293
+            ]
+          ]
+        },
+        "zh:deepseek-r1": {
+          "records": 244,
+          "groups": 122,
+          "human": 122,
+          "AI": 122,
+          "AI_recall": 1.0,
+          "human_FPR": 0.00819672131147541,
+          "macro_F1": 0.9959015705047451,
+          "balanced_accuracy": 0.9959016393442623,
+          "AUROC": 0.999932813759742,
+          "confusion_matrix": [
+            [
+              121,
+              1
+            ],
+            [
+              0,
+              122
+            ]
+          ]
+        },
+        "zh:deepseek-v3": {
+          "records": 1768,
+          "groups": 884,
+          "human": 884,
+          "AI": 884,
+          "AI_recall": 0.998868778280543,
+          "human_FPR": 0.004524886877828055,
+          "macro_F1": 0.9971719375586847,
+          "balanced_accuracy": 0.9971719457013575,
+          "AUROC": 0.9999769660735858,
+          "confusion_matrix": [
+            [
+              880,
+              4
+            ],
+            [
+              1,
+              883
+            ]
+          ]
+        },
+        "zh:doubao-1.5-pro": {
+          "records": 634,
+          "groups": 317,
+          "human": 317,
+          "AI": 317,
+          "AI_recall": 0.9968454258675079,
+          "human_FPR": 0.00946372239747634,
+          "macro_F1": 0.9936907889499244,
+          "balanced_accuracy": 0.9936908517350158,
+          "AUROC": 0.9988058394451135,
+          "confusion_matrix": [
+            [
+              314,
+              3
+            ],
+            [
+              1,
+              316
+            ]
+          ]
+        },
+        "zh:gemini-2.5-flash": {
+          "records": 1898,
+          "groups": 949,
+          "human": 949,
+          "AI": 949,
+          "AI_recall": 0.9978925184404637,
+          "human_FPR": 0.003161222339304531,
+          "macro_F1": 0.9973656473193033,
+          "balanced_accuracy": 0.9973656480505796,
+          "AUROC": 0.9999622474325478,
+          "confusion_matrix": [
+            [
+              946,
+              3
+            ],
+            [
+              2,
+              947
+            ]
+          ]
+        },
+        "zh:gpt-4": {
+          "records": 86,
+          "groups": 43,
+          "human": 43,
+          "AI": 43,
+          "AI_recall": 1.0,
+          "human_FPR": 0.0,
+          "macro_F1": 1.0,
+          "balanced_accuracy": 1.0,
+          "AUROC": 1.0,
+          "confusion_matrix": [
+            [
+              43,
+              0
+            ],
+            [
+              0,
+              43
+            ]
+          ]
+        },
+        "zh:gpt-4o": {
+          "records": 1728,
+          "groups": 864,
+          "human": 864,
+          "AI": 864,
+          "AI_recall": 1.0,
+          "human_FPR": 0.0011574074074074073,
+          "macro_F1": 0.9994212961024895,
+          "balanced_accuracy": 0.9994212962962963,
+          "AUROC": 0.9999973208161865,
+          "confusion_matrix": [
+            [
+              863,
+              1
+            ],
+            [
+              0,
+              864
+            ]
+          ]
+        },
+        "zh:qwen-2.5": {
+          "records": 286,
+          "groups": 143,
+          "human": 143,
+          "AI": 143,
+          "AI_recall": 1.0,
+          "human_FPR": 0.006993006993006993,
+          "macro_F1": 0.9965034537563421,
+          "balanced_accuracy": 0.9965034965034965,
+          "AUROC": 1.0,
+          "confusion_matrix": [
+            [
+              142,
+              1
+            ],
+            [
+              0,
+              143
+            ]
+          ]
+        },
+        "zh:qwen-3": {
+          "records": 252,
+          "groups": 126,
+          "human": 126,
+          "AI": 126,
+          "AI_recall": 1.0,
+          "human_FPR": 0.0,
+          "macro_F1": 1.0,
+          "balanced_accuracy": 1.0,
+          "AUROC": 1.0,
+          "confusion_matrix": [
+            [
+              126,
+              0
+            ],
+            [
+              0,
+              126
+            ]
+          ]
+        },
+        "zh:qwen-max": {
+          "records": 1238,
+          "groups": 619,
+          "human": 619,
+          "AI": 619,
+          "AI_recall": 1.0,
+          "human_FPR": 0.0,
+          "macro_F1": 1.0,
+          "balanced_accuracy": 1.0,
+          "AUROC": 1.0,
+          "confusion_matrix": [
+            [
+              619,
+              0
+            ],
+            [
+              0,
+              619
+            ]
+          ]
+        },
+        "zh:qwen-unversioned": {
+          "records": 672,
+          "groups": 336,
+          "human": 336,
+          "AI": 336,
+          "AI_recall": 0.9970238095238095,
+          "human_FPR": 0.0,
+          "macro_F1": 0.9985119014666186,
+          "balanced_accuracy": 0.9985119047619048,
+          "AUROC": 0.9999911422902494,
+          "confusion_matrix": [
+            [
+              336,
+              0
+            ],
+            [
+              1,
+              335
+            ]
+          ]
+        },
+        "zh:text-davinci-003": {
+          "records": 78,
+          "groups": 39,
+          "human": 39,
+          "AI": 39,
+          "AI_recall": 0.9230769230769231,
+          "human_FPR": 0.02564102564102564,
+          "macro_F1": 0.9486842105263158,
+          "balanced_accuracy": 0.9487179487179488,
+          "AUROC": 0.9927679158448389,
+          "confusion_matrix": [
+            [
+              38,
+              1
+            ],
+            [
+              3,
+              36
+            ]
+          ]
+        }
+      }
+    },
+    "equal_family_macro_F1": 0.9569264712371578,
+    "primary_equal_cell_macro_F1": 0.9948548892034849,
+    "worst_cell_macro_F1": 0.9814284080612954,
+    "source_group_bootstrap": {
+      "replicates": 200,
+      "seed": 20261115,
+      "overall_macro_F1_95CI": [
+        0.9935974495163764,
+        0.9956999830751327
+      ]
+    }
+  },
+  "first_feature_only": {
+    "overall": {
+      "records": 20000,
+      "groups": 10000,
+      "human": 10000,
+      "AI": 10000,
+      "AI_recall": 0.9935,
+      "human_FPR": 0.025,
+      "macro_F1": 0.9842486522753102,
+      "balanced_accuracy": 0.9842500000000001,
+      "AUROC": 0.9987982,
+      "confusion_matrix": [
+        [
+          9750,
+          250
+        ],
+        [
+          65,
+          9935
+        ]
+      ]
+    },
+    "strata": {
+      "language": {
+        "en": {
+          "records": 10000,
+          "groups": 5000,
+          "human": 5000,
+          "AI": 5000,
+          "AI_recall": 0.9928,
+          "human_FPR": 0.0176,
+          "macro_F1": 0.9875996646949334,
+          "balanced_accuracy": 0.9875999999999999,
+          "AUROC": 0.99919272,
+          "confusion_matrix": [
+            [
+              4912,
+              88
+            ],
+            [
+              36,
+              4964
+            ]
+          ]
+        },
+        "zh": {
+          "records": 10000,
+          "groups": 5000,
+          "human": 5000,
+          "AI": 5000,
+          "AI_recall": 0.9942,
+          "human_FPR": 0.0324,
+          "macro_F1": 0.9808966208032539,
+          "balanced_accuracy": 0.9809,
+          "AUROC": 0.9986351600000001,
+          "confusion_matrix": [
+            [
+              4838,
+              162
+            ],
+            [
+              29,
+              4971
+            ]
+          ]
+        }
+      },
+      "domain": {
+        "academic": {
+          "records": 4874,
+          "groups": 2437,
+          "human": 2437,
+          "AI": 2437,
+          "AI_recall": 0.9835863766926549,
+          "human_FPR": 0.034058268362741076,
+          "macro_F1": 0.9747620898132346,
+          "balanced_accuracy": 0.9747640541649569,
+          "AUROC": 0.996103027309959,
+          "confusion_matrix": [
+            [
+              2354,
+              83
+            ],
+            [
+              40,
+              2397
+            ]
+          ]
+        },
+        "expository": {
+          "records": 5158,
+          "groups": 2579,
+          "human": 2579,
+          "AI": 2579,
+          "AI_recall": 0.9996122528111672,
+          "human_FPR": 0.0081426909654905,
+          "macro_F1": 0.9957347167952085,
+          "balanced_accuracy": 0.9957347809228383,
+          "AUROC": 0.9998830293474557,
+          "confusion_matrix": [
+            [
+              2558,
+              21
+            ],
+            [
+              1,
+              2578
+            ]
+          ]
+        },
+        "narrative": {
+          "records": 3064,
+          "groups": 1532,
+          "human": 1532,
+          "AI": 1532,
+          "AI_recall": 0.9993472584856397,
+          "human_FPR": 0.022193211488250653,
+          "macro_F1": 0.9885756983029841,
+          "balanced_accuracy": 0.9885770234986946,
+          "AUROC": 0.9999412021351295,
+          "confusion_matrix": [
+            [
+              1498,
+              34
+            ],
+            [
+              1,
+              1531
+            ]
+          ]
+        },
+        "news": {
+          "records": 4834,
+          "groups": 2417,
+          "human": 2417,
+          "AI": 2417,
+          "AI_recall": 0.9979313198179561,
+          "human_FPR": 0.019445593711212246,
+          "macro_F1": 0.9892420509435331,
+          "balanced_accuracy": 0.9892428630533718,
+          "AUROC": 0.9996495996414857,
+          "confusion_matrix": [
+            [
+              2370,
+              47
+            ],
+            [
+              5,
+              2412
+            ]
+          ]
+        },
+        "opinion": {
+          "records": 366,
+          "groups": 183,
+          "human": 183,
+          "AI": 183,
+          "AI_recall": 0.994535519125683,
+          "human_FPR": 0.09289617486338798,
+          "macro_F1": 0.9507255048616305,
+          "balanced_accuracy": 0.9508196721311475,
+          "AUROC": 0.9951327301501985,
+          "confusion_matrix": [
+            [
+              166,
+              17
+            ],
+            [
+              1,
+              182
+            ]
+          ]
+        },
+        "qa": {
+          "records": 1704,
+          "groups": 852,
+          "human": 852,
+          "AI": 852,
+          "AI_recall": 0.9800469483568075,
+          "human_FPR": 0.056338028169014086,
+          "macro_F1": 0.961841831013331,
+          "balanced_accuracy": 0.9618544600938967,
+          "AUROC": 0.9957391059974873,
+          "confusion_matrix": [
+            [
+              804,
+              48
+            ],
+            [
+              17,
+              835
+            ]
+          ]
+        }
+      },
+      "length_bin": {
+        "long": {
+          "records": 3966,
+          "groups": 1983,
+          "human": 1983,
+          "AI": 1983,
+          "AI_recall": 0.9803328290468987,
+          "human_FPR": 0.03580433686333838,
+          "macro_F1": 0.9722624403203126,
+          "balanced_accuracy": 0.9722642460917802,
+          "AUROC": 0.9958863654222769,
+          "confusion_matrix": [
+            [
+              1912,
+              71
+            ],
+            [
+              39,
+              1944
+            ]
+          ]
+        },
+        "medium": {
+          "records": 14508,
+          "groups": 7254,
+          "human": 7254,
+          "AI": 7254,
+          "AI_recall": 0.9984835952577888,
+          "human_FPR": 0.014336917562724014,
+          "macro_F1": 0.9920730131166446,
+          "balanced_accuracy": 0.9920733388475325,
+          "AUROC": 0.9997755628242035,
+          "confusion_matrix": [
+            [
+              7150,
+              104
+            ],
+            [
+              11,
+              7243
+            ]
+          ]
+        },
+        "short": {
+          "records": 1526,
+          "groups": 763,
+          "human": 763,
+          "AI": 763,
+          "AI_recall": 0.9803407601572739,
+          "human_FPR": 0.0982961992136304,
+          "macro_F1": 0.9409309631169045,
+          "balanced_accuracy": 0.9410222804718218,
+          "AUROC": 0.9891440458011334,
+          "confusion_matrix": [
+            [
+              688,
+              75
+            ],
+            [
+              15,
+              748
+            ]
+          ]
+        }
+      },
+      "matched_generator_family": {
+        "anthropic": {
+          "records": 586,
+          "groups": 293,
+          "human": 293,
+          "AI": 293,
+          "AI_recall": 1.0,
+          "human_FPR": 0.06484641638225255,
+          "macro_F1": 0.9675426705729735,
+          "balanced_accuracy": 0.9675767918088737,
+          "AUROC": 0.9999184614846999,
+          "confusion_matrix": [
+            [
+              274,
+              19
+            ],
+            [
+              0,
+              293
+            ]
+          ]
+        },
+        "deepseek": {
+          "records": 4306,
+          "groups": 2153,
+          "human": 2153,
+          "AI": 2153,
+          "AI_recall": 0.9995355318160706,
+          "human_FPR": 0.014862981885740827,
+          "macro_F1": 0.9923358777390792,
+          "balanced_accuracy": 0.9923362749651649,
+          "AUROC": 0.9997303366326467,
+          "confusion_matrix": [
+            [
+              2121,
+              32
+            ],
+            [
+              1,
+              2152
+            ]
+          ]
+        },
+        "doubao": {
+          "records": 634,
+          "groups": 317,
+          "human": 317,
+          "AI": 317,
+          "AI_recall": 0.9936908517350158,
+          "human_FPR": 0.07570977917981073,
+          "macro_F1": 0.9589410967639088,
+          "balanced_accuracy": 0.9589905362776026,
+          "AUROC": 0.9941088079292262,
+          "confusion_matrix": [
+            [
+              293,
+              24
+            ],
+            [
+              2,
+              315
+            ]
+          ]
+        },
+        "gemini": {
+          "records": 4084,
+          "groups": 2042,
+          "human": 2042,
+          "AI": 2042,
+          "AI_recall": 0.9995102840352595,
+          "human_FPR": 0.009794319294809012,
+          "macro_F1": 0.9948578710744456,
+          "balanced_accuracy": 0.9948579823702253,
+          "AUROC": 0.9999568320892981,
+          "confusion_matrix": [
+            [
+              2022,
+              20
+            ],
+            [
+              1,
+              2041
+            ]
+          ]
+        },
+        "glm": {
+          "records": 38,
+          "groups": 19,
+          "human": 19,
+          "AI": 19,
+          "AI_recall": 0.5263157894736842,
+          "human_FPR": 0.05263157894736842,
+          "macro_F1": 0.7246376811594203,
+          "balanced_accuracy": 0.7368421052631579,
+          "AUROC": 0.853185595567867,
+          "confusion_matrix": [
+            [
+              18,
+              1
+            ],
+            [
+              9,
+              10
+            ]
+          ]
+        },
+        "llada": {
+          "records": 68,
+          "groups": 34,
+          "human": 34,
+          "AI": 34,
+          "AI_recall": 0.9411764705882353,
+          "human_FPR": 0.0,
+          "macro_F1": 0.9705627705627706,
+          "balanced_accuracy": 0.9705882352941176,
+          "AUROC": 0.9671280276816608,
+          "confusion_matrix": [
+            [
+              34,
+              0
+            ],
+            [
+              2,
+              32
+            ]
+          ]
+        },
+        "llama": {
+          "records": 120,
+          "groups": 60,
+          "human": 60,
+          "AI": 60,
+          "AI_recall": 1.0,
+          "human_FPR": 0.0,
+          "macro_F1": 1.0,
+          "balanced_accuracy": 1.0,
+          "AUROC": 1.0,
+          "confusion_matrix": [
+            [
+              60,
+              0
+            ],
+            [
+              0,
+              60
+            ]
+          ]
+        },
+        "openai": {
+          "records": 5602,
+          "groups": 2801,
+          "human": 2801,
+          "AI": 2801,
+          "AI_recall": 0.982506247768654,
+          "human_FPR": 0.04034273473759371,
+          "macro_F1": 0.9710779816426048,
+          "balanced_accuracy": 0.9710817565155301,
+          "AUROC": 0.9957080407224379,
+          "confusion_matrix": [
+            [
+              2688,
+              113
+            ],
+            [
+              49,
+              2752
+            ]
+          ]
+        },
+        "qwen": {
+          "records": 4562,
+          "groups": 2281,
+          "human": 2281,
+          "AI": 2281,
+          "AI_recall": 0.9995615957913196,
+          "human_FPR": 0.01797457255589654,
+          "macro_F1": 0.9907928037749101,
+          "balanced_accuracy": 0.9907935116177116,
+          "AUROC": 0.9997461061115008,
+          "confusion_matrix": [
+            [
+              2240,
+              41
+            ],
+            [
+              1,
+              2280
+            ]
+          ]
+        }
+      },
+      "matched_generator_language": {
+        "en:deepseek-v3": {
+          "records": 2294,
+          "groups": 1147,
+          "human": 1147,
+          "AI": 1147,
+          "AI_recall": 0.999128160418483,
+          "human_FPR": 0.006974716652136007,
+          "macro_F1": 0.9960766853521035,
+          "balanced_accuracy": 0.9960767218831734,
+          "AUROC": 0.9998206153956076,
+          "confusion_matrix": [
+            [
+              1139,
+              8
+            ],
+            [
+              1,
+              1146
+            ]
+          ]
+        },
+        "en:gemini-2.5-flash": {
+          "records": 2186,
+          "groups": 1093,
+          "human": 1093,
+          "AI": 1093,
+          "AI_recall": 1.0,
+          "human_FPR": 0.0054894784995425435,
+          "macro_F1": 0.997255240072323,
+          "balanced_accuracy": 0.9972552607502287,
+          "AUROC": 0.9999983258681002,
+          "confusion_matrix": [
+            [
+              1087,
+              6
+            ],
+            [
+              0,
+              1093
+            ]
+          ]
+        },
+        "en:gpt-4o": {
+          "records": 3218,
+          "groups": 1609,
+          "human": 1609,
+          "AI": 1609,
+          "AI_recall": 0.9794903666873834,
+          "human_FPR": 0.036668738346799255,
+          "macro_F1": 0.9714089477701653,
+          "balanced_accuracy": 0.9714108141702921,
+          "AUROC": 0.9961917909706935,
+          "confusion_matrix": [
+            [
+              1550,
+              59
+            ],
+            [
+              33,
+              1576
+            ]
+          ]
+        },
+        "en:llada": {
+          "records": 68,
+          "groups": 34,
+          "human": 34,
+          "AI": 34,
+          "AI_recall": 0.9411764705882353,
+          "human_FPR": 0.0,
+          "macro_F1": 0.9705627705627706,
+          "balanced_accuracy": 0.9705882352941176,
+          "AUROC": 0.9671280276816608,
+          "confusion_matrix": [
+            [
+              34,
+              0
+            ],
+            [
+              2,
+              32
+            ]
+          ]
+        },
+        "en:llama-unversioned": {
+          "records": 120,
+          "groups": 60,
+          "human": 60,
+          "AI": 60,
+          "AI_recall": 1.0,
+          "human_FPR": 0.0,
+          "macro_F1": 1.0,
+          "balanced_accuracy": 1.0,
+          "AUROC": 1.0,
+          "confusion_matrix": [
+            [
+              60,
+              0
+            ],
+            [
+              0,
+              60
+            ]
+          ]
+        },
+        "en:qwen-max": {
+          "records": 2114,
+          "groups": 1057,
+          "human": 1057,
+          "AI": 1057,
+          "AI_recall": 1.0,
+          "human_FPR": 0.014191106906338695,
+          "macro_F1": 0.9929040892898742,
+          "balanced_accuracy": 0.9929044465468306,
+          "AUROC": 0.9997905569841639,
+          "confusion_matrix": [
+            [
+              1042,
+              15
+            ],
+            [
+              0,
+              1057
+            ]
+          ]
+        },
+        "zh:chatglm": {
+          "records": 38,
+          "groups": 19,
+          "human": 19,
+          "AI": 19,
+          "AI_recall": 0.5263157894736842,
+          "human_FPR": 0.05263157894736842,
+          "macro_F1": 0.7246376811594203,
+          "balanced_accuracy": 0.7368421052631579,
+          "AUROC": 0.853185595567867,
+          "confusion_matrix": [
+            [
+              18,
+              1
+            ],
+            [
+              9,
+              10
+            ]
+          ]
+        },
+        "zh:chatgpt-early": {
+          "records": 376,
+          "groups": 188,
+          "human": 188,
+          "AI": 188,
+          "AI_recall": 0.9946808510638298,
+          "human_FPR": 0.1702127659574468,
+          "macro_F1": 0.9116333725029377,
+          "balanced_accuracy": 0.9122340425531915,
+          "AUROC": 0.9847498868266185,
+          "confusion_matrix": [
+            [
+              156,
+              32
+            ],
+            [
+              1,
+              187
+            ]
+          ]
+        },
+        "zh:chatgpt-unversioned": {
+          "records": 116,
+          "groups": 58,
+          "human": 58,
+          "AI": 58,
+          "AI_recall": 0.9482758620689655,
+          "human_FPR": 0.05172413793103448,
+          "macro_F1": 0.9482758620689655,
+          "balanced_accuracy": 0.9482758620689655,
+          "AUROC": 0.9768133174791914,
+          "confusion_matrix": [
+            [
+              55,
+              3
+            ],
+            [
+              3,
+              55
+            ]
+          ]
+        },
+        "zh:claude-3.5-haiku": {
+          "records": 586,
+          "groups": 293,
+          "human": 293,
+          "AI": 293,
+          "AI_recall": 1.0,
+          "human_FPR": 0.06484641638225255,
+          "macro_F1": 0.9675426705729735,
+          "balanced_accuracy": 0.9675767918088737,
+          "AUROC": 0.9999184614846999,
+          "confusion_matrix": [
+            [
+              274,
+              19
+            ],
+            [
+              0,
+              293
+            ]
+          ]
+        },
+        "zh:deepseek-r1": {
+          "records": 244,
+          "groups": 122,
+          "human": 122,
+          "AI": 122,
+          "AI_recall": 1.0,
+          "human_FPR": 0.06557377049180328,
+          "macro_F1": 0.9671778315846112,
+          "balanced_accuracy": 0.9672131147540983,
+          "AUROC": 0.99932813759742,
+          "confusion_matrix": [
+            [
+              114,
+              8
+            ],
+            [
+              0,
+              122
+            ]
+          ]
+        },
+        "zh:deepseek-v3": {
+          "records": 1768,
+          "groups": 884,
+          "human": 884,
+          "AI": 884,
+          "AI_recall": 1.0,
+          "human_FPR": 0.01809954751131222,
+          "macro_F1": 0.9909494850216025,
+          "balanced_accuracy": 0.9909502262443439,
+          "AUROC": 0.9997517454597572,
+          "confusion_matrix": [
+            [
+              868,
+              16
+            ],
+            [
+              0,
+              884
+            ]
+          ]
+        },
+        "zh:doubao-1.5-pro": {
+          "records": 634,
+          "groups": 317,
+          "human": 317,
+          "AI": 317,
+          "AI_recall": 0.9936908517350158,
+          "human_FPR": 0.07570977917981073,
+          "macro_F1": 0.9589410967639088,
+          "balanced_accuracy": 0.9589905362776026,
+          "AUROC": 0.9941088079292262,
+          "confusion_matrix": [
+            [
+              293,
+              24
+            ],
+            [
+              2,
+              315
+            ]
+          ]
+        },
+        "zh:gemini-2.5-flash": {
+          "records": 1898,
+          "groups": 949,
+          "human": 949,
+          "AI": 949,
+          "AI_recall": 0.9989462592202318,
+          "human_FPR": 0.014752370916754479,
+          "macro_F1": 0.9920965733773615,
+          "balanced_accuracy": 0.9920969441517387,
+          "AUROC": 0.9998623141657627,
+          "confusion_matrix": [
+            [
+              935,
+              14
+            ],
+            [
+              1,
+              948
+            ]
+          ]
+        },
+        "zh:gpt-4": {
+          "records": 86,
+          "groups": 43,
+          "human": 43,
+          "AI": 43,
+          "AI_recall": 1.0,
+          "human_FPR": 0.0,
+          "macro_F1": 1.0,
+          "balanced_accuracy": 1.0,
+          "AUROC": 1.0,
+          "confusion_matrix": [
+            [
+              43,
+              0
+            ],
+            [
+              0,
+              43
+            ]
+          ]
+        },
+        "zh:gpt-4o": {
+          "records": 1728,
+          "groups": 864,
+          "human": 864,
+          "AI": 864,
+          "AI_recall": 1.0,
+          "human_FPR": 0.020833333333333332,
+          "macro_F1": 0.9895822029300054,
+          "balanced_accuracy": 0.9895833333333334,
+          "AUROC": 0.9999464163237312,
+          "confusion_matrix": [
+            [
+              846,
+              18
+            ],
+            [
+              0,
+              864
+            ]
+          ]
+        },
+        "zh:qwen-2.5": {
+          "records": 286,
+          "groups": 143,
+          "human": 143,
+          "AI": 143,
+          "AI_recall": 1.0,
+          "human_FPR": 0.04895104895104895,
+          "macro_F1": 0.9755098046411489,
+          "balanced_accuracy": 0.9755244755244755,
+          "AUROC": 1.0,
+          "confusion_matrix": [
+            [
+              136,
+              7
+            ],
+            [
+              0,
+              143
+            ]
+          ]
+        },
+        "zh:qwen-3": {
+          "records": 252,
+          "groups": 126,
+          "human": 126,
+          "AI": 126,
+          "AI_recall": 1.0,
+          "human_FPR": 0.03968253968253968,
+          "macro_F1": 0.9801509160509775,
+          "balanced_accuracy": 0.9801587301587301,
+          "AUROC": 0.9985512723607962,
+          "confusion_matrix": [
+            [
+              121,
+              5
+            ],
+            [
+              0,
+              126
+            ]
+          ]
+        },
+        "zh:qwen-max": {
+          "records": 1238,
+          "groups": 619,
+          "human": 619,
+          "AI": 619,
+          "AI_recall": 1.0,
+          "human_FPR": 0.006462035541195477,
+          "macro_F1": 0.9967689484989182,
+          "balanced_accuracy": 0.9967689822294022,
+          "AUROC": 0.9999921703931245,
+          "confusion_matrix": [
+            [
+              615,
+              4
+            ],
+            [
+              0,
+              619
+            ]
+          ]
+        },
+        "zh:qwen-unversioned": {
+          "records": 672,
+          "groups": 336,
+          "human": 336,
+          "AI": 336,
+          "AI_recall": 0.9970238095238095,
+          "human_FPR": 0.02976190476190476,
+          "macro_F1": 0.9836280157606926,
+          "balanced_accuracy": 0.9836309523809524,
+          "AUROC": 0.999450821995465,
+          "confusion_matrix": [
+            [
+              326,
+              10
+            ],
+            [
+              1,
+              335
+            ]
+          ]
+        },
+        "zh:text-davinci-003": {
+          "records": 78,
+          "groups": 39,
+          "human": 39,
+          "AI": 39,
+          "AI_recall": 0.6923076923076923,
+          "human_FPR": 0.02564102564102564,
+          "macro_F1": 0.8299513667616971,
+          "balanced_accuracy": 0.8333333333333334,
+          "AUROC": 0.9763313609467456,
+          "confusion_matrix": [
+            [
+              38,
+              1
+            ],
+            [
+              12,
+              27
+            ]
+          ]
+        }
+      }
+    },
+    "equal_family_macro_F1": 0.9523054170322348,
+    "primary_equal_cell_macro_F1": 0.9813054013987162,
+    "worst_cell_macro_F1": 0.9507255048616305,
+    "source_group_bootstrap": {
+      "replicates": 200,
+      "seed": 20261115,
+      "overall_macro_F1_95CI": [
+        0.9824909163516622,
+        0.9860002658399807
+      ]
+    }
+  },
+  "ablation_limit": "Same selected mDeBERTa classifier; full fusion uses another 6,708 training documents. This does not isolate individual feature contributions at equal supervised fitting budgets."
+}

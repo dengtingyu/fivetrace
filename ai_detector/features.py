@@ -13,6 +13,13 @@ from .data import normalize
 
 LM_NAMES = ["nll_mean", "nll_block_std", "nll_block_max", "rank_top5", "rank_6_50",
             "rank_51_500", "rank_gt500", "log_rank_mean"]
+
+
+def english_route(text):
+    latin=len(re.findall(r'[A-Za-z]',text));han=len(re.findall(r'[\u3400-\u9fff]',text))
+    return latin>=20 and latin/max(1,latin+han)>=.8
+
+
 STYLE_NAMES = ["sentence_length_mean", "sentence_length_std", "sentence_length_cv", "word_ttr",
                "word_entropy", "top10_word_share", "frequent_word_gap_mean", "frequent_word_gap_std",
                "pronoun_frequency", "pronoun_gap_std"]

@@ -8,8 +8,8 @@ from ai_detector.config import STANDARD_ARTIFACT_DIR
 from ai_detector.expanded_data import phase
 
 class ReleaseProtocolTests(unittest.TestCase):
-    def test_release_defaults_to_v2(self):
-        self.assertEqual(STANDARD_ARTIFACT_DIR.name,"Qwen3-1.7B-LoRA-v2")
+    def test_release_defaults_to_v3(self):
+        self.assertEqual(STANDARD_ARTIFACT_DIR.name,"fivetrace_v3_mdeberta")
     def test_ai_only_metrics_do_not_invent_binary_performance(self):
         r=evaluate.metrics([dict(label=1,score=.2,paragraphs=1,AI_paragraphs=0),dict(label=1,score=.8,paragraphs=1,AI_paragraphs=1)])
         self.assertEqual(r["AI_recall"],.5)

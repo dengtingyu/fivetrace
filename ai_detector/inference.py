@@ -9,7 +9,7 @@ from .features import FeatureExtractor, numeric_vector
 from .paragraphs import analyze_paragraphs, document_windows, verdict
 
 
-class Detector:
+class V2Detector:
     def __init__(self, device="auto", artifact_dir=None):
         if artifact_dir is None and (ARTIFACT_DIR / "active_standard.json").exists():
             active = json.loads((ARTIFACT_DIR / "active_standard.json").read_text(encoding="utf-8"))
@@ -84,3 +84,17 @@ def read_text(path):
         except UnicodeDecodeError:
             continue
     raise ValueError("无法识别文件编码，请另存为 UTF-8 文本。")
+
+
+def Detector(device="auto", artifact_dir=None):
+    """Select V3 by default; explicit V2 artifacts retain the historical runtime."""
+    from .v3_inference import V3Detector
+    selected = Path(artifact_dir) if artifact_dir is not None else STANDARD_ARTIFACT_DIR
+    if not (selected / "detector.joblib").exists():
+        raise FileNotFoundError("No trained artifact. Run train_v3.py first; this source release does not include weights.")
+    bundle = joblib.load(selected / "detector.joblib")
+    if bundle.get("variant") == "FiveTrace-V3-mDeBERTa":
+        return V3Detector(device=device, artifact_dir=selected)
+    legacy = V2Detector(device=device, artifact_dir=selected)
+    legacy.bundle["thresholds"] = dict(human_below=.5, ai_at_or_above=.5, policy="fixed_0.5")
+    return legacy

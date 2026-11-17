@@ -32,6 +32,7 @@ class ExpandedFeatureExtractor:
         self.device = self.base.device
         self.adapter_dir = Path(adapter_dir) if adapter_dir else None
         self.adapters = None
+        self.reference_names = {"ai": "ai", "human": "human"}
         self.base_fingerprint = self.base.fingerprint
         self.metadata = dict(self.base.metadata, preprocess_version=PREPROCESS_VERSION,
                              document_window_characters=600,
@@ -72,7 +73,7 @@ class ExpandedFeatureExtractor:
         values = {"base": original}
         try:
             for name in ["ai", "human"]:
-                self.adapters.set_adapter(name)
+                self.adapters.set_adapter(self.reference_names[name])
                 self.adapters.eval()
                 self.base.fingerprint = self.variant_fingerprints[name]
                 _, values[name] = self.base.extract(text, need_lm=True)
@@ -100,7 +101,7 @@ class ExpandedFeatureExtractor:
         variants = {}
         try:
             for name in ["ai", "human"]:
-                self.adapters.set_adapter(name)
+                self.adapters.set_adapter(self.reference_names[name])
                 self.adapters.eval()
                 self.base.fingerprint = self.variant_fingerprints[name]
                 variants[name] = self.base.extract_many(texts, need_lm=True, batch_size=batch_size)

@@ -1,0 +1,52 @@
+{
+  "variant": "FiveTrace-V3-mDeBERTa",
+  "initialization": "Original pretrained Qwen3-1.7B-Base and mDeBERTa-v3-base only; fresh task parameters.",
+  "available_training_documents": 26824,
+  "component_documents": {
+    "reference": 13412,
+    "classifier": 6704,
+    "fusion": 6708
+  },
+  "development_documents": 4000,
+  "calibration_documents": 4000,
+  "adapters": [
+    {
+      "branch": "ai",
+      "training_documents": 6706,
+      "development_documents": 200,
+      "trainable_parameters": 1605632,
+      "epochs": 3,
+      "steps": 2517,
+      "selected_step": 1600,
+      "elapsed_seconds": 4085.3140578999883,
+      "trained_tokens": 4881465,
+      "weights_sha256": "251127e825edb26f1ed2e8fa2cb56f15fcfb4cd6b2341e9b73e25896264f124b"
+    },
+    {
+      "branch": "human",
+      "training_documents": 6706,
+      "development_documents": 200,
+      "trainable_parameters": 1605632,
+      "epochs": 3,
+      "steps": 2517,
+      "selected_step": 1678,
+      "elapsed_seconds": 3785.2914271000773,
+      "trained_tokens": 4880325,
+      "weights_sha256": "e07199d00c2724fe56822d1d228fde41b99e9825868045b213cabcb703f28d3a"
+    }
+  ],
+  "classifier": {
+    "selected_epoch": 2,
+    "elapsed_seconds": 1744.7876238000463,
+    "trainable_parameters": 278810882,
+    "train_documents": 6704,
+    "all_encoder_parameters_trained": true,
+    "test_labels_used": false
+  },
+  "max_classifier_epochs": 3,
+  "fusion_C": 1.0,
+  "test_threshold": 0.5,
+  "total_end_to_end_seconds": null,
+  "timing_note": "Phase timings exclude preceding loading/preprocessing and subsequent extraction, fusion and external evaluation. Pauses and cached resumptions are not end-to-end timing measurements.",
+  "hardware": "RTX 5060 Laptop GPU, 8 GB VRAM; CPU offloading separates classifier from Qwen rank computation."
+}

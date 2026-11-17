@@ -33,3 +33,6 @@ local_models/
 !PUBLICATION_MANIFEST.json
 !results/*.json
 !requirements-eval.txt
+
+benchmarks/
+.downloads/

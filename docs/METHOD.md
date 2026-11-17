@@ -1,26 +1,15 @@
-# Method and resource model
+# V3 method
 
-## Corpus-trained reference features
+Feature 1 is a fully fine-tuned multilingual mDeBERTa-v3-base binary classifier (278,810,882 trainable parameters). Fusion receives the raw AI-minus-human logit, preserving continuous evidence. It does not round the classifier output to 0/1 first.
 
-Let q_base be a frozen Qwen3-1.7B-Base. Train q_AI and q_human by causal likelihood on disjoint, labelled AI and human corpora through rank-8 LoRA adapters. The deployed reference is one backbone with separately switchable adapters. No target generator is loaded or queried during detection.
+Features 2/3 measure teacher-forced causal loss and exact full-vocabulary midrank statistics from original Qwen3-1.7B-Base, an AI-corpus LoRA and a human-corpus LoRA. Include branch differences. The AI adapter learns a mixture of generator corpora; it is not a separate exact reconstruction of each target generator. No target generator weights or inference API are required, but one Qwen and a separate mDeBERTa model are deployed locally.
 
-For each input window, teacher forcing supplies token negative log likelihood and exact full-vocabulary midrank statistics under Base, AI-LoRA and human-LoRA. Include human-minus-AI differences. These are proxy-reference measurements; they are not the original generator's true likelihood or logits. The current AI branch mixes generator corpora rather than training one adapter per generator.
+Features 4/5 describe language-aware sentence length, lexical diversity/distribution, repetitions and pronouns, plus evidence reliability inputs. A standardized logistic fusion is fitted on separate source groups. No recall-repair max-score branch from historical V2.3 is used in V3.
 
-Group 1 is a logistic head on frozen Base hidden representations. Groups 4 and 5 describe sentence lengths and lexical distributions. A fitted StandardScaler/logistic model combines the head logit, 32 likelihood/rank values and 10 style values. The runtime threshold is 0.5.
+The published run makes 26,824 training documents available: 13,412 reference, 6,704 classifier and 6,708 fusion. All roles have disjoint source groups. Each reference branch sees its 6,706 class-specific documents for three epochs through deterministic crops of up to 256 tokens. LoRA: rank 8, alpha 16, q_proj/v_proj, dropout .05, BF16, batch 2, accumulation 4, peak LR 2e-4. Select the minimum equal-language development NLL. Feature 1 trains up to three epochs with FP32 parameters/AdamW, BF16 autocast, checkpointing, batch 2, accumulation 8, LR 2e-5 and max 512 tokens; select epoch 2 by development equal-language/domain Macro-F1 then AUROC. Fusion C in {.03,.1,1} is selected on development; C=1 wins. Test threshold remains .5.
 
-## What is saved
+At inference, first merge short adjacent source paragraphs (<100 nonspace characters). Chinese windows use approximately 600 characters; English windows use 384 Qwen tokens with short-tail handling. Pass the same raw body window to the classifier's own tokenizer (max 512 tokens) and the Qwen feature extractor. Distinct raw classifier inputs have distinct SHA keys even if Qwen normalization collapses them. Weight window probabilities into paragraphs by character count. Benchmark document scores weight paragraph probabilities by character count; the user-facing AI percentage instead counts AI-labelled detection paragraphs. Neither is the actual fraction of AI-authored characters.
 
-- Required deployed target-generator weights: none.
-- Required target-generator API calls during detection: zero.
-- Reference backbone: one Qwen3-1.7B-Base, with two small adapters.
-- Reference computations: Base plus both adapter passes; exact rank calculation still touches the full vocabulary. Sliding contexts may add passes for long windows.
+Classifier inference now uses FP32 with autocast/TF32 disabled for batch-shape consistency; reference scoring remains the original FP16. The published head/fusion were fitted before this numerical repair and were not refitted after external scores were inspected. Fresh local training uses stable FP32 classifier features.
 
-The benefit is removal of target-generator deployment/API dependencies. Collection of representative corpora, training, local GPU computation and storage still cost resources. No controlled latency, throughput or monetary comparison against target generators has been measured. Local adapters do not make an arbitrary unseen generator reliably detectable.
-
-## Measured local training
-
-Each adapter has 1,605,632 trainable parameters. AI and human adapters each use 3,000 training units, 160 development units, rank8/alpha16, q_proj/v_proj, dropout0.05, BF16 causal-LM training, max256 tokens, batch2 with accumulation4, and one epoch. Select the checkpoint with minimum class-specific development NLL. The stored AI best step is375; human best step300, from375 total updates each. The two LoRA phases (including their development evaluations) took 476.6 + 495.1 seconds, about16.2minutes, on an8GB RTX5060 Laptop; about4.18GiB peak allocated CUDA memory. This excludes preceding tokenization/model loading, feature extraction, classifier/fusion fitting, downloads and benchmarks. No reliable single end-to-end training time was retained; cached/resumed fitting timings cannot establish it. Group1 fits a logistic head on8,000 labelled frozen-Base representations; fusion uses3,000 separate units. See results/training.json.
-
-## Scope of the contribution
-
-The project uses generator corpora to learn compact, class-conditional likelihood/rank references, combined with three additional evidence groups. The deployed model stays fixed in size while its corpus coverage can be changed offline. Proxy scores describe the trained local references and are not the target generator's true likelihood. New corpus mixtures need their own independent validation.
+V3 needs CUDA for the validated LoRA scorer. The runtime moves mDeBERTa back to CPU before Qwen rank passes to limit simultaneous GPU memory. One local Qwen still entails Base + two adapter passes, full-vocabulary ranking and possible sliding contexts. No controlled latency/cost saving percentage has been measured. Phase timings are in results/v3_training.json; there is no reliable uninterrupted end-to-end training time.

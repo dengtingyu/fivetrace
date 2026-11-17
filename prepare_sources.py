@@ -23,8 +23,11 @@ def download(item):
     partial.replace(path)
 def main():
     from huggingface_hub import snapshot_download
+    import argparse
+    parser=argparse.ArgumentParser();parser.add_argument("--models-only",action="store_true");args=parser.parse_args()
     manifest=json.loads((Path(__file__).resolve().parent/"results/sources.json").read_text("utf-8"))
-    with ThreadPoolExecutor(max_workers=6) as pool:list(pool.map(download,manifest["datasets"]))
+    if not args.models_only:
+        with ThreadPoolExecutor(max_workers=6) as pool:list(pool.map(download,manifest["datasets"]))
     base=manifest["base"];directory=ROOT/"models/Qwen3-1.7B-Base"
     snapshot_download(base["model_id"],revision=base["revision"],local_dir=directory,
         allow_patterns=["*.json","*.safetensors","*.txt","*.jinja","LICENSE"])

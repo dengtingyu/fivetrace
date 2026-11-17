@@ -101,18 +101,20 @@ def summarize_paragraphs(paragraphs):
         for name in BINARY_LABELS}}
 
 
-def analyze_paragraphs(raw_text, predict_window, thresholds, reference_model, progress=None, min_chars=100, window_chars=1000):
+def detection_window_spans(text,min_chars=100,window_chars=1000,window_splitter=None):
+    bounds=window_splitter(text) if window_splitter else document_windows(text,max_chars=window_chars)
+    spans=[dict(start=start,end=end,characters=sum(not c.isspace() for c in text[start:end])) for start,end in bounds]
+    return [(g[0]['start'],g[-1]['end']) for g in _merge_short_units(spans,min_chars)]
+
+
+def analyze_paragraphs(raw_text, predict_window, thresholds, reference_model, progress=None, min_chars=100, window_chars=1000, window_splitter=None):
     text, source_paragraphs, paragraphs = prepare_detection_paragraphs(raw_text, min_chars)
     results = []
     for source in paragraphs:
         if progress:
             progress(source["paragraph"], len(paragraphs))
         windows = []
-        spans = [{"start": start, "end": end,
-                  "characters": sum(not c.isspace() for c in source["text"][start:end])}
-                 for start, end in document_windows(source["text"], max_chars=window_chars)]
-        for index, group in enumerate(_merge_short_units(spans, min_chars), start=1):
-            start, end = group[0]["start"], group[-1]["end"]
+        for index, (start,end) in enumerate(detection_window_spans(source['text'],min_chars,window_chars,window_splitter), start=1):
             part = source["text"][start:end]
             chars = sum(not c.isspace() for c in part)
             try:
